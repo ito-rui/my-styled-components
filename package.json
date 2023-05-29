@@ -1,0 +1,91 @@
+{
+	"name": "rvi-system",
+	"description": "React Components With Styled-Components",
+	"version": "0.1.2",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "src/types/index.ts",
+	"author": "rvi",
+	"license": "MIT",
+	"keywords": [
+		"front-end",
+		"typescript",
+		"react-components",
+		"styled-components"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://itorui@github.com/itorui/rvi-system.git"
+	},
+	"homepage": "https://github.com/itorui/rvi-system#readme",
+	"dependencies": {
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-pro-sidebar": "^1.1.0-alpha.1",
+		"react-router-dom": "^6.11.2",
+		"styled-components": "^5.3.11"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"lint": "eslint --ext ts,tsx .",
+		"format": "prettier --write ."
+	},
+	"volta": {
+		"node": "18.15.0",
+		"yarn": "4.0.0-rc.44"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.0",
+		"@rollup/plugin-typescript": "^11.1.1",
+		"@storybook/addon-essentials": "^7.0.17",
+		"@storybook/addon-interactions": "^7.0.17",
+		"@storybook/addon-links": "^7.0.17",
+		"@storybook/blocks": "^7.0.17",
+		"@storybook/preset-create-react-app": "^7.0.17",
+		"@storybook/react": "^7.0.17",
+		"@storybook/react-webpack5": "^7.0.17",
+		"@storybook/testing-library": "^0.0.14-next.2",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^13.0.0",
+		"@testing-library/user-event": "^13.2.1",
+		"@types/eslint": "^8",
+		"@types/jest": "^27.0.1",
+		"@types/node": "^16.7.13",
+		"@types/prettier": "^2",
+		"@types/prop-types": "^15",
+		"@types/styled-components": "^5",
+		"@typescript-eslint/eslint-plugin": "^5.59.7",
+		"@typescript-eslint/parser": "^5.59.7",
+		"babel-plugin-named-exports-order": "^0.0.2",
+		"eslint": "^8.41.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-react": "^7.32.2",
+		"prettier": "^2.8.8",
+		"prop-types": "^15.8.1",
+		"react-scripts": "5.0.1",
+		"rollup": "^3.23.0",
+		"rollup-plugin-dts": "^5.3.0",
+		"storybook": "^7.0.17",
+		"tslib": "^2.5.2",
+		"typescript": "^4.4.2",
+		"web-vitals": "^2.1.0",
+		"webpack": "^5.84.1"
+	},
+	"files": [
+		"package.json",
+		"README.md",
+		"LICENSE",
+		"types",
+		"dist"
+	],
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-pro-sidebar": "^1.1.0-alpha.1",
+		"react-router-dom": "^6.11.2",
+		"styled-components": "^5.3.11"
+	}
+}
