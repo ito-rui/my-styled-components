@@ -4,7 +4,8 @@ import dts from "rollup-plugin-dts";
 
 const pkg = {
 	main: "dist/cjs/index.cjs",
-	module: "dist/esm/index.mjs",
+	module: "dist/esm/index.ejs",
+	browser: "dist/rvi-system.js",
 };
 
 export default [
@@ -14,12 +15,17 @@ export default [
 			{
 				file: pkg.main,
 				format: "cjs",
-				sourcemap: false,
+				sourcemap: "inline",
 			},
 			{
 				file: pkg.module,
-				format: "esm",
-				sourcemap: false,
+				format: "es",
+				sourcemap: "inline",
+			},
+			{
+				file: pkg.browser,
+				format: "iife",
+				sourcemap: "inline",
 			},
 		],
 		plugins: [
