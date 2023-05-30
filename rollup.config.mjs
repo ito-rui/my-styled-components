@@ -3,8 +3,8 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
 const pkg = {
-	main: "dist/cjs/index.js",
-	module: "dist/esm/index.js",
+	main: "dist/cjs/index.cjs",
+	module: "dist/esm/index.mjs",
 };
 
 export default [
