@@ -1,11 +1,9 @@
 {
 	"name": "rvi-system",
 	"description": "React Components With Styled-Components",
-	"version": "0.1.12",
+	"version": "0.1.13",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.es.js",
-	"browser": "dist/rvi-system.js",
-	"types": "src/types/index.d.ts",
 	"author": "rvi",
 	"license": "MIT",
 	"keywords": [
@@ -20,8 +18,6 @@
 	},
 	"homepage": "https://github.com/itorui/rvi-system#readme",
 	"dependencies": {
-		"@types/react": "^18.0.0",
-		"@types/react-dom": "^18.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-pro-sidebar": "^1.1.0-alpha.1",
@@ -60,9 +56,11 @@
 		"@types/node": "^16.7.13",
 		"@types/prettier": "^2",
 		"@types/prop-types": "^15",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
 		"@types/styled-components": "^5",
 		"@typescript-eslint/eslint-plugin": "^5.59.7",
-		"@typescript-eslint/parser": "^5.59.7",
+		"@typescript-eslint/parser": "^5.59.8",
 		"babel-plugin-named-exports-order": "^0.0.2",
 		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.8.0",
@@ -89,6 +87,7 @@
 	],
 	"peerDependencies": {
 		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"react-pro-sidebar": "^1.1.0-alpha.1",
 		"react-router-dom": "^6.11.2",
 		"styled-components": "^5.3.11"
