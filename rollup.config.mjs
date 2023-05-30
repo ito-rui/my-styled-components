@@ -19,13 +19,11 @@ export default [
 		input: "src/index.ts",
 		output: [
 			{
-				name: moduleName,
 				file: pkg.main,
 				format: "cjs",
 				sourcemap: "inline",
 			},
 			{
-				name: moduleName,
 				file: pkg.module,
 				format: "es",
 				sourcemap: "inline",
