@@ -4399,7 +4399,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.167":
+"@types/lodash.camelcase@npm:^4":
+  version: 4.3.7
+  resolution: "@types/lodash.camelcase@npm:4.3.7"
+  dependencies:
+    "@types/lodash": "npm:*"
+  checksum: 62d28c280d3907bd712dc555520785a3573358383c6dea0add004072ac5341ec0b52cf28b858b9bd2327526a8eca95cf977652787e5f2eda21717f091c4996d1
+  languageName: node
+  linkType: hard
+
+"@types/lodash.upperfirst@npm:^4":
+  version: 4.3.7
+  resolution: "@types/lodash.upperfirst@npm:4.3.7"
+  dependencies:
+    "@types/lodash": "npm:*"
+  checksum: 054dd2b6accccf14b2aa9b79a69e142df5fed516d4c38c673c5d5e44feb3e01e5457bebd7aadbf5cda9b8e22dcc0e33b641b9ad0d8a0ddb30d8db08b5ef14879
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*, @types/lodash@npm:^4.14.167":
   version: 4.14.195
   resolution: "@types/lodash@npm:4.14.195"
   checksum: a503fc2cef87abc17ec6f388009a787e609b799b8fcb69c47f9b91d5a47e564b5c00fd121f691acf2b2bb43b788e28ca22781de1ac561b2c35bea380c6446f79
@@ -11194,6 +11212,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.camelcase@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "lodash.camelcase@npm:4.3.0"
+  checksum: 773d36b52707814ad5b6880fe8ccefa1a490a69cb5d233b9600e00a310ef64b639f56760e383743ac06901f2c073ee4c317b19896397bf1cf94d1cbcf2706923
+  languageName: node
+  linkType: hard
+
 "lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -11226,6 +11251,13 @@ __metadata:
   version: 4.5.0
   resolution: "lodash.uniq@npm:4.5.0"
   checksum: 8ac56bbaa8a4ccd0dd8b9cabdcee89dfb382f8907fdb6ac12d40d46298c7b4de74c6bdab3a9e6fb4f0307568a67220f9ce86270e17dd8b628a312be9ee3a4767
+  languageName: node
+  linkType: hard
+
+"lodash.upperfirst@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "lodash.upperfirst@npm:4.3.1"
+  checksum: 5b588ebd49cc166f12d48f63bdf2b6cb17652dcdcf4e6ab32e5978d13749af055eb0f3835d42995093dab410f03fa56d6c5ba57c1f3e3daa54dff14dd5415539
   languageName: node
   linkType: hard
 
@@ -14437,6 +14469,8 @@ __metadata:
     "@testing-library/user-event": "npm:^13.2.1"
     "@types/eslint": "npm:^8"
     "@types/jest": "npm:^27.0.1"
+    "@types/lodash.camelcase": "npm:^4"
+    "@types/lodash.upperfirst": "npm:^4"
     "@types/node": "npm:^16.7.13"
     "@types/prettier": "npm:^2"
     "@types/prop-types": "npm:^15"
@@ -14449,6 +14483,8 @@ __metadata:
     eslint: "npm:^8.41.0"
     eslint-config-prettier: "npm:^8.8.0"
     eslint-plugin-react: "npm:^7.32.2"
+    lodash.camelcase: "npm:^4.3.0"
+    lodash.upperfirst: "npm:^4.3.1"
     prettier: "npm:^2.8.8"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"

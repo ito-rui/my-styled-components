@@ -1,28 +1,37 @@
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import * as path from "path";
+import camelCase from "lodash.camelcase";
+import upperFirst from "lodash.upperfirst";
 
 const pkg = {
-	main: "dist/cjs/index.cjs",
-	module: "dist/esm/index.ejs",
+	name: "rvi-system",
+	main: "dist/cjs/index.js",
+	module: "dist/esm/index.es.js",
 	browser: "dist/rvi-system.js",
 };
+
+const moduleName = upperFirst(camelCase(pkg.name.replace(/^\@.*\//, "")));
 
 export default [
 	{
 		input: "src/index.ts",
 		output: [
 			{
+				name: moduleName,
 				file: pkg.main,
 				format: "cjs",
 				sourcemap: "inline",
 			},
 			{
+				name: moduleName,
 				file: pkg.module,
 				format: "es",
 				sourcemap: "inline",
 			},
 			{
+				name: moduleName,
 				file: pkg.browser,
 				format: "iife",
 				sourcemap: "inline",
