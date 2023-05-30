@@ -21,18 +21,18 @@ export default [
 			{
 				file: pkg.main,
 				format: "cjs",
-				sourcemap: "inline",
+				sourcemap: false,
 			},
 			{
 				file: pkg.module,
-				format: "es",
-				sourcemap: "inline",
+				format: "esm",
+				sourcemap: false,
 			},
 			{
 				name: moduleName,
 				file: pkg.browser,
 				format: "iife",
-				sourcemap: "inline",
+				sourcemap: false,
 			},
 		],
 		plugins: [
