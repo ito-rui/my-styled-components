@@ -19,6 +19,24 @@ npm install rvi-system
 yarn add rvi-system
 ```
 
+## Add rui-system
+
+### Load the proprietor in App.tsx
+
+```typescript
+import { ThemeProvider } from "styled-components";
+import { theme } from 'rvi-system';
+
+export default function App() {
+    return (
+        <ThemeProvider theme={theme}>
+            ... </ Your App Components> ...
+        </ThemeProvider>
+    )
+}
+
+```
+
 ## Extend and develop rvi-sysytem
 
 ### First
