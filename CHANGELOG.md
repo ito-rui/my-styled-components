@@ -1,3 +1,9 @@
+## 0.1.4 (2023/05/31): Bata
+
+-   ### Introducing CHROMATIC
+-   ### Add workflow hosting to CHROMATIC
+-   ### Changed the layout of the Button component's Storybook
+
 ## 0.1.7 (2023/05/30): Bata
 
 ### Export theme

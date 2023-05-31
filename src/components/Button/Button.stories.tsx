@@ -9,6 +9,9 @@ import { ButtonType, BaseButtonType } from "../../types/components/Button";
 export default {
 	title: "Components/Button",
 	component: Button,
+	parameters: {
+		layout: "centered",
+	},
 } as Meta<ButtonType>;
 
 const Template: Story<ButtonType> = ({ children, ...args }) => (
@@ -25,7 +28,7 @@ const defaultProps: BaseButtonType = {
 	borderRadius: 0.5,
 	textColor: "black500",
 	bgColor: "blue500",
-	boxShadow: "md",
+	boxShadow: "sm",
 	borderWidth: "0",
 };
 
