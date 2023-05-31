@@ -1,4 +1,8 @@
-## 0.1.4 (2023/05/31): Bata
+## 0.1.16 (2023/05/31): Bata
+
+-   ### Add AutoDoc to Storybook
+
+## 0.1.14 (2023/05/31): Bata
 
 -   ### Introducing CHROMATIC
 -   ### Add workflow hosting to CHROMATIC

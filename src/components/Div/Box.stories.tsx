@@ -9,6 +9,7 @@ import { BoxFCType } from "../../types/components/Div";
 export default {
 	title: "Components/Box",
 	component: Box,
+	tags: ["autodocs"],
 } as Meta<BoxFCType>;
 
 const Template: Story<BoxFCType> = ({ children, ...props }) => {
@@ -20,7 +21,18 @@ const Template: Story<BoxFCType> = ({ children, ...props }) => {
 };
 
 export const Default = Template.bind({});
-const defaultProps: BoxFCType = {
+const DefaultProps: BoxFCType = {
+	width: "100%",
+	height: 20,
+	borderRadius: 0.5,
+	boxShadow: "md",
+	margin: 1,
+};
+
+Default.args = { children: "Default", ...DefaultProps };
+
+export const Responsive = Template.bind({});
+const ResponsiveProps: BoxFCType = {
 	height: {
 		xs: 20,
 		sm: 20,
@@ -158,4 +170,4 @@ const defaultProps: BoxFCType = {
 	},
 };
 
-Default.args = { children: "Default", ...defaultProps };
+Responsive.args = { children: "Responsive", ...ResponsiveProps };

@@ -9,6 +9,7 @@ import { ButtonType, BaseButtonType } from "../../types/components/Button";
 export default {
 	title: "Components/Button",
 	component: Button,
+	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
