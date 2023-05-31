@@ -1,10 +1,10 @@
 /* eslint react/jsx-props-no-spreading: off */
 
 import type { FC } from "react";
-import { RvButtonType } from "../../types/components/Button";
-import StyledButton from "./style";
+import { RvButtonFCType } from "../../types/components/Button";
+import { StyledButton } from "./style";
 
-export const rvButtonProps: RvButtonType = {
+export const rvButtonProps: RvButtonFCType = {
 	width: {
 		xs: 5,
 		sm: 5,
@@ -19,18 +19,18 @@ export const rvButtonProps: RvButtonType = {
 		lg: 2.5,
 		xl: 2.5,
 	},
-	borderRadius: 0.5,
-	borderWidth: "1",
-	borderColor: "black500",
-	bgColor: "white500",
+	borderRadius: 0.4,
+	borderWidth: "0px",
+	borderColor: "gray500",
+	bgColor: "gray500",
 	textColor: "black500",
 	hover: {
-		bgColor: "gray200",
-		borderColor: "gray200",
+		bgColor: "gray300",
+		borderColor: "gray300",
 	},
 };
 
-const RvButton: FC<RvButtonType> = ({ children, ...props }) => {
+const RvButton: FC<RvButtonFCType> = ({ children, ...props }) => {
 	const width = { ...props }.width ?? { ...rvButtonProps }.width;
 	const height = { ...props }.height ?? { ...rvButtonProps }.height;
 	const borderColor = { ...props }.borderColor ?? { ...rvButtonProps }.borderColor;

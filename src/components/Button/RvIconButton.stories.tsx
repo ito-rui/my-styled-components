@@ -4,22 +4,23 @@ import type { Meta, Story } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { ThemeProvider } from "styled-components";
 import theme from "../config/theme";
-import { RvButton } from "./index";
-import type { RvButtonFCType } from "../../types/components/Button";
+import { RvIconButton } from "./index";
+import type { RvIconButtonFCType } from "../../types/components/Button";
 import { rvButtonProps } from "./RvButton";
+import { MdSavedSearch } from "react-icons/md";
 
 export default {
-	title: "Components/Button/RvButton",
-	component: RvButton,
+	title: "Components/Button/RvIconButton",
+	component: RvIconButton,
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
-} as Meta<RvButtonFCType>;
+} as Meta<RvIconButtonFCType>;
 
-const Template: Story<RvButtonFCType> = ({ children, ...args }) => (
+const Template: Story<RvIconButtonFCType> = ({ children, ...args }) => (
 	<ThemeProvider theme={theme}>
-		<RvButton {...args}>{children}</RvButton>
+		<RvIconButton {...args}>{children}</RvIconButton>
 	</ThemeProvider>
 );
 
@@ -28,34 +29,17 @@ const Template: Story<RvButtonFCType> = ({ children, ...args }) => (
  */
 export const Default = Template.bind({});
 
-const defaultProps: RvButtonFCType = {
+const defaultProps: RvIconButtonFCType = {
 	...rvButtonProps,
 };
 Default.args = {
 	children: "Default",
 	...defaultProps,
+	width: 8,
+	icon: <MdSavedSearch />,
 };
 Default.play = async ({ canvasElement }) => {
 	const canvas = within(canvasElement);
 	const button = canvas.getByRole("button");
 	userEvent.click(button);
-};
-
-/**
- * OutLine Button
- */
-export const OutLine = Template.bind({});
-const outLineProps: RvButtonFCType = {
-	...rvButtonProps,
-	bgColor: "white500",
-	borderWidth: "1px",
-	borderColor: "black500",
-	hover: {
-		bgColor: "black50",
-		textColor: "white50",
-	},
-};
-OutLine.args = {
-	children: "OutLine",
-	...outLineProps,
 };

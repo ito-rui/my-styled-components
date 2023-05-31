@@ -21,6 +21,12 @@ type BasePropsType = {
 		| HTMLAttributes<HTMLButtonElement>
 		| StylesType;
 	children?: ReactNode;
+	onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-export type RvButtonType = BasePropsType & BaseButtonType;
+export type RvButtonFCType = BasePropsType & BaseButtonType;
+
+export type RvIconButtonFCType = BasePropsType &
+	BaseButtonType & {
+		icon?: ReactNode;
+	};

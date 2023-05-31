@@ -30,7 +30,7 @@ import {
 	getDisplay,
 } from "../../../utils/getStyle";
 
-const BaseButtonStyle = styled.button<BaseButtonType>`
+const StyledButton = styled.button<BaseButtonType>`
 	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
 	display: ${({ display }) => getDisplay({ display }) ?? "block"};
@@ -135,4 +135,4 @@ const BaseButtonStyle = styled.button<BaseButtonType>`
 		})}
 `;
 
-export default BaseButtonStyle;
+export default StyledButton;
