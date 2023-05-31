@@ -19,6 +19,7 @@ jobs:
                   registry-url: "https://registry.npmjs.org"
                   scope: "rvi-system"
                   always-auth: true
+                  fetch-depth: 0
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
