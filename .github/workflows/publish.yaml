@@ -41,7 +41,7 @@ jobs:
             - name: Publish to chromatic
               uses: chromaui/action@v1
               with:
-                  projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   token: ${{ secrets.GH_TOKEN }}
 
             - name: Get Package Version
