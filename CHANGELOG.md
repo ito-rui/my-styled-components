@@ -1,3 +1,9 @@
+## 0.1.17 (2023/05/31): Bata
+
+-   ### Fix TypeFile disabled => disableds
+-   ### Create Props for the base of the Button component
+-   ### Rename Components Files
+
 ## 0.1.16 (2023/05/31): Bata
 
 -   ### Add AutoDoc to Storybook

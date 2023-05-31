@@ -61,10 +61,10 @@ const BaseButtonStyle = styled.button<BaseButtonType>`
 	}
 
 	&:disabled {
-		color: ${({ theme, disabled }) => getColor({ textColor: disabled?.textColor }) ?? theme.colors.systemColors.black500};
-		background-color: ${({ theme, disabled }) =>
-			getBgColor({ bgColor: disabled?.bgColor }) ?? theme.colors.systemColors.white500};
-		cursor: ${({ disabled }) => disabled?.cursor ?? "not-allowed"};
+		color: ${({ theme, disableds }) => getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.black500};
+		background-color: ${({ theme, disableds }) =>
+			getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.white500};
+		cursor: ${({ disableds }) => disableds?.cursor ?? "not-allowed"};
 	}
 
 	${({ theme, ...props }) =>
@@ -95,7 +95,7 @@ const BaseButtonStyle = styled.button<BaseButtonType>`
 				fontWeight,
 				lineHeight,
 				hover,
-				disabled,
+				disableds,
 			} = { ...props };
 			return theme.breakpoint[breakpoint]`
                 width: ${getWidth({ width, breakpoint }) ?? theme.sizes.widths.auto};
@@ -127,9 +127,9 @@ const BaseButtonStyle = styled.button<BaseButtonType>`
                     background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? "none"};
                 };
                 &:disabled {
-		            color: ${getColor({ textColor: disabled?.textColor }) ?? theme.colors.systemColors.black500};
-		            background-color: ${getBgColor({ bgColor: disabled?.bgColor }) ?? theme.colors.systemColors.white500};
-		            cursor: ${disabled?.cursor ?? "not-allowed"};
+		            color: ${getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.black500};
+		            background-color: ${getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.white500};
+		            cursor: ${disableds?.cursor ?? "not-allowed"};
 	            }
             `;
 		})}

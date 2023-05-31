@@ -5,7 +5,7 @@ export type BaseButtonHoverType = {
 	hover?: BaseCSSButtonType & {};
 };
 export type BaseButtonDisabledType = {
-	disabled?: BaseCSSButtonType & {};
+	disableds?: BaseCSSButtonType & {};
 };
 
 export type BaseButtonType = BaseCSSButtonType & BaseButtonHoverType & BaseButtonDisabledType;
@@ -23,4 +23,4 @@ type BasePropsType = {
 	children?: ReactNode;
 };
 
-export type ButtonType = BasePropsType;
+export type RvButtonType = BasePropsType & BaseButtonType;

@@ -1,4 +1,4 @@
 import StyledButton from "./style";
-import Button from "./Button";
+import RvButton from "./RvButton";
 
-export { Button, StyledButton };
+export { RvButton, StyledButton };

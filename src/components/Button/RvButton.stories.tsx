@@ -3,34 +3,32 @@
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import theme from "../config/theme";
-import { Button } from "./index";
-import { ButtonType, BaseButtonType } from "../../types/components/Button";
+import { RvButton } from "./index";
+import type { RvButtonType } from "../../types/components/Button";
+import { rvButtonProps } from "./RvButton";
 
 export default {
 	title: "Components/Button",
-	component: Button,
+	component: RvButton,
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
-} as Meta<ButtonType>;
+} as Meta<RvButtonType>;
 
-const Template: Story<ButtonType> = ({ children, ...args }) => (
+const Template: Story<RvButtonType> = ({ children, ...args }) => (
 	<ThemeProvider theme={theme}>
-		<Button {...args}>{children}</Button>
+		<RvButton {...args}>{children}</RvButton>
 	</ThemeProvider>
 );
 
+/**
+ * Base Button
+ */
 export const Default = Template.bind({});
 
-const defaultProps: BaseButtonType = {
-	width: 5,
-	height: 2,
-	borderRadius: 0.5,
-	textColor: "black500",
-	bgColor: "blue500",
-	boxShadow: "sm",
-	borderWidth: "0",
+const defaultProps: RvButtonType = {
+	...rvButtonProps,
+	/* ... add props ... */
 };
-
 Default.args = { children: "Default", ...defaultProps };

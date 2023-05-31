@@ -41,6 +41,6 @@ export type BasePropsType = {
 	children?: ReactNode;
 };
 
-export type BoxFCType = BaseDivType & BasePropsType;
+export type RvBoxFCType = BaseDivType & BasePropsType;
 
-export type FlexFCType = FlexType & BasePropsType;
+export type RvFlexFCType = FlexType & BasePropsType;
