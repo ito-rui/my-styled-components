@@ -37,8 +37,10 @@ type StylesType =
 	| SidebarHeaderType;
 
 export type BasePropsType = {
-	[props: string]: string | object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
+	[props: string]: object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
 	children?: ReactNode;
 };
 
-export type DivType = BasePropsType;
+export type BoxFCType = BaseDivType & BasePropsType;
+
+export type FlexFCType = FlexType & BasePropsType;

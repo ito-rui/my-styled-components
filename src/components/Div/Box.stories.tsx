@@ -3,24 +3,24 @@
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import theme from "../config/theme";
-import { Div } from "./index";
-import { DivType, BaseDivType } from "../../types/components/Div";
+import { Box } from ".";
+import { BoxFCType } from "../../types/components/Div";
 
 export default {
 	title: "Components/Box",
-	component: Div,
-} as Meta<DivType>;
+	component: Box,
+} as Meta<BoxFCType>;
 
-const Template: Story<DivType> = ({ children, ...props }) => {
+const Template: Story<BoxFCType> = ({ children, ...props }) => {
 	return (
 		<ThemeProvider theme={theme}>
-			<Div {...props}>{children}</Div>
+			<Box {...props}>{children}</Box>
 		</ThemeProvider>
 	);
 };
 
 export const Default = Template.bind({});
-const defaultProps: BaseDivType = {
+const defaultProps: BoxFCType = {
 	height: {
 		xs: 20,
 		sm: 20,
