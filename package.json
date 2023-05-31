@@ -1,7 +1,7 @@
 {
 	"name": "rvi-system",
 	"description": "React Components With Styled-Components",
-	"version": "0.1.14",
+	"version": "0.1.15",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.es.js",
 	"author": "rvi",
@@ -14,9 +14,9 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://itorui@github.com/itorui/rvi-system.git"
+		"url": "git+https://itorui@github.com/ito-rui/rvi-system.git"
 	},
-	"homepage": "https://github.com/itorui/rvi-system#readme",
+	"homepage": "https://github.com/ito-rui/rvi-system#readme",
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
