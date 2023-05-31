@@ -1,3 +1,7 @@
+name: chromatic
+
+on: push
+
 jobs:
     chromatic-deployment:
         steps:
@@ -10,4 +14,5 @@ jobs:
             - name: Publish to Chromatic
               uses: chromaui/action@v1
               with:
+                  token: ${{ secrets.GH_TOKEN }}
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
