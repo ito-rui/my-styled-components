@@ -6,6 +6,7 @@ import {
 	FontSizesKey,
 	FontWeightsKey,
 	LineHeightsKey,
+	FontsKey,
 } from "../components/config/theme";
 
 export type MediaType = "xs" | "sm" | "md" | "lg" | "xl";
@@ -72,7 +73,7 @@ export type JustifyContentType = CSSProperties["justifyContent"] | ResponsiveTyp
 
 export type AlignItemsType = CSSProperties["alignItems"] | ResponsiveType<CSSProperties["alignItems"]>;
 
-export type FontSizesType = (CSSProperties["fontSize"] | FontSizesKey) | ResponsiveType<CSSProperties["fontSize"] | FontSizesKey>;
+export type FontSizeType = (CSSProperties["fontSize"] | FontSizesKey) | ResponsiveType<CSSProperties["fontSize"] | FontSizesKey>;
 
 export type FontWeightType =
 	| CSSProperties["fontWeight"]
@@ -84,6 +85,12 @@ export type LineHeightType =
 	| ResponsiveType<CSSProperties["lineHeight"] | LineHeightsKey>;
 
 export type CursorType = CSSProperties["cursor"] | ResponsiveType<CSSProperties["cursor"]>;
+
+export type TextDecorationType = CSSProperties["textDecoration"] | ResponsiveType<CSSProperties["textDecoration"]>;
+
+export type FontStyleType = CSSProperties["fontStyle"] | ResponsiveType<CSSProperties["fontStyle"]>;
+
+export type FontFamilyType = CSSProperties["fontFamily"] | FontsKey;
 
 export type BaseWidthType = {
 	width?: WidthType;
@@ -135,8 +142,10 @@ export type BasePaddingType = {
 };
 
 export type BaseFontType = {
-	fontSize?: FontSizesType;
+	fontFamily?: FontFamilyType;
+	fontSize?: FontSizeType;
 	fontWeight?: FontWeightType;
+	fontStyle?: FontStyleType;
 };
 
 export type BaseTransitionType = {
@@ -145,6 +154,10 @@ export type BaseTransitionType = {
 
 export type BaseCursorType = {
 	cursor?: CursorType;
+};
+
+export type BaseTextType = {
+	textDecoration?: TextDecorationType;
 };
 
 export type BaseCSSDivType = BaseWidthType &
@@ -162,3 +175,11 @@ export type BaseCSSDivType = BaseWidthType &
 export type BaseCSSButtonType = BaseCSSDivType & BaseCursorType;
 
 export type BaseCSSInputType = BaseCSSDivType;
+
+export type BaseCSSSpanType = BaseColorType &
+	BaseFontType &
+	BaseMarginType &
+	BasePaddingType &
+	BaseBorderType &
+	BaseTextType &
+	BaseTransitionType;

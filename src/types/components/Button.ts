@@ -1,16 +1,25 @@
 import type { ReactNode, MouseEventHandler, HTMLAttributes } from "react";
 import type { BaseCSSButtonType } from "../CSSProperties";
+import type { AlignItemsType, JustifyContentType } from "../CSSProperties";
 
-export type BaseButtonHoverType = {
+export type StyledButtonHoverType = {
 	hover?: BaseCSSButtonType & {};
 };
-export type BaseButtonDisabledType = {
+
+export type StyledButtonDisabledType = {
 	disableds?: BaseCSSButtonType & {};
 };
 
-export type BaseButtonType = BaseCSSButtonType & BaseButtonHoverType & BaseButtonDisabledType;
+export type StyledButtonType = BaseCSSButtonType & StyledButtonHoverType & StyledButtonDisabledType;
 
-type StylesType = BaseButtonType;
+export type StyledIconButtonType = BaseCSSButtonType &
+	StyledButtonHoverType &
+	StyledButtonDisabledType & {
+		alignItems?: AlignItemsType;
+		justifyContent?: JustifyContentType;
+	};
+
+type StylesType = StyledButtonType;
 
 type BasePropsType = {
 	[props: string]:
@@ -24,9 +33,10 @@ type BasePropsType = {
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-export type RvButtonFCType = BasePropsType & BaseButtonType;
-
-export type RvIconButtonFCType = BasePropsType &
-	BaseButtonType & {
+export type RvButtonFCType = BasePropsType &
+	StyledButtonType & {
 		icon?: ReactNode;
+		iconStyle?: "left" | "right";
 	};
+
+export type RvIconButtonFCType = BasePropsType & StyledButtonType;

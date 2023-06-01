@@ -101,7 +101,7 @@ export type GetTransitionType = {
 };
 
 export type GetFontSizeType = {
-	fontSize: CSSCustomProperties.FontSizesType;
+	fontSize: CSSCustomProperties.FontSizeType;
 	breakpoint?: CSSCustomProperties.MediaType;
 };
 

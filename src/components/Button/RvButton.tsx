@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { RvButtonFCType } from "../../types/components/Button";
 import { StyledButton } from "./style";
 
-export const rvButtonProps: RvButtonFCType = {
+export const rvButtonDefaultProps: RvButtonFCType = {
 	width: {
 		xs: 5,
 		sm: 5,
@@ -31,19 +31,26 @@ export const rvButtonProps: RvButtonFCType = {
 };
 
 const RvButton: FC<RvButtonFCType> = ({ children, ...props }) => {
-	const width = { ...props }.width ?? { ...rvButtonProps }.width;
-	const height = { ...props }.height ?? { ...rvButtonProps }.height;
-	const borderColor = { ...props }.borderColor ?? { ...rvButtonProps }.borderColor;
-	const borderRadius = { ...props }.borderRadius ?? { ...rvButtonProps }.borderRadius;
-	const borderWidth = { ...props }.borderWidth ?? { ...rvButtonProps }.borderWidth;
-	const bgColor = { ...props }.bgColor ?? { ...rvButtonProps }.bgColor;
-	const textColor = { ...props }.textColor ?? { ...rvButtonProps }.textColor;
+	const width = { ...props }.width ?? { ...rvButtonDefaultProps }.width;
+	const height = { ...props }.height ?? { ...rvButtonDefaultProps }.height;
+	const borderColor = { ...props }.borderColor ?? { ...props }.bgColor ?? { ...rvButtonDefaultProps }.borderColor;
+	const borderRadius = { ...props }.borderRadius ?? { ...rvButtonDefaultProps }.borderRadius;
+	const borderWidth = { ...props }.borderWidth ?? { ...rvButtonDefaultProps }.borderWidth;
+	const bgColor = { ...props }.bgColor ?? { ...rvButtonDefaultProps }.bgColor;
+	const textColor = { ...props }.textColor ?? { ...rvButtonDefaultProps }.textColor;
 	const hover = {
-		bgColor: { ...props }.hover?.bgColor ?? { ...rvButtonProps }.hover?.bgColor,
-		borderColor: { ...props }.hover?.borderColor ?? { ...rvButtonProps }.hover?.borderColor,
+		bgColor: { ...props }.hover?.bgColor ?? { ...rvButtonDefaultProps }.hover?.bgColor,
+		borderColor: { ...props }.hover?.borderColor ?? { ...rvButtonDefaultProps }.hover?.borderColor,
 	};
+	const iconStyle = { ...props }.iconStyle ?? "left";
 	const newProps = { ...props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover };
-	return <StyledButton {...newProps}>{children}</StyledButton>;
+	return (
+		<StyledButton {...newProps}>
+			{newProps.icon && iconStyle === "left" && newProps.icon}
+			{children}
+			{newProps.icon && iconStyle === "right" && newProps.icon}
+		</StyledButton>
+	);
 };
 
 export default RvButton;

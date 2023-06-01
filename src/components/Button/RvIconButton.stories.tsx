@@ -6,8 +6,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "../config/theme";
 import { RvIconButton } from "./index";
 import type { RvIconButtonFCType } from "../../types/components/Button";
-import { rvButtonProps } from "./RvButton";
-import { MdSavedSearch } from "react-icons/md";
+import { rvIconButtonDefaultProps } from "./RvIconButton";
+import { MdBarChart } from "react-icons/md";
 
 export default {
 	title: "Components/Button/RvIconButton",
@@ -30,13 +30,11 @@ const Template: Story<RvIconButtonFCType> = ({ children, ...args }) => (
 export const Default = Template.bind({});
 
 const defaultProps: RvIconButtonFCType = {
-	...rvButtonProps,
+	...rvIconButtonDefaultProps,
 };
 Default.args = {
-	children: "Default",
+	children: <MdBarChart size={24} />,
 	...defaultProps,
-	width: 8,
-	icon: <MdSavedSearch />,
 };
 Default.play = async ({ canvasElement }) => {
 	const canvas = within(canvasElement);

@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import { breakpoint } from "../../config/theme";
-import type { BaseButtonType } from "../../../types/components/Button";
+import type { StyledButtonType } from "../../../types/components/Button";
 import {
 	getWidth,
 	getHeight,
@@ -30,7 +30,7 @@ import {
 	getDisplay,
 } from "../../../utils/getStyle";
 
-const StyledButton = styled.button<BaseButtonType>`
+const StyledButton = styled.button<StyledButtonType>`
 	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
 	display: ${({ display }) => getDisplay({ display }) ?? "block"};
@@ -118,7 +118,7 @@ const StyledButton = styled.button<BaseButtonType>`
                 margin-right: ${getMarginRight({ marginRight, breakpoint }) ?? theme.sizes.spaces[0]};
                 margin-bottom: ${getMarginBottom({ marginBottom, breakpoint }) ?? theme.sizes.spaces[0]};
                 margin-left: ${getMarginLeft({ marginLeft, breakpoint }) ?? theme.sizes.spaces[0]};
-                transition: ${getTransition({ transition, breakpoint }) ?? theme.transition.box.base}
+                transition: ${getTransition({ transition, breakpoint }) ?? theme.transition.box.base};
                 font-size: ${getFontSize({ fontSize, breakpoint }) ?? theme.fonts.fontSizes.base};
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
                 line-height: ${getLineHeight({ lineHeight, breakpoint }) ?? theme.sizes.lineHeights.normal};

@@ -6,7 +6,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "../config/theme";
 import { RvButton } from "./index";
 import type { RvButtonFCType } from "../../types/components/Button";
-import { rvButtonProps } from "./RvButton";
+import { rvButtonDefaultProps } from "./RvButton";
+import { MdSavedSearch } from "react-icons/md";
 
 export default {
 	title: "Components/Button/RvButton",
@@ -29,7 +30,7 @@ const Template: Story<RvButtonFCType> = ({ children, ...args }) => (
 export const Default = Template.bind({});
 
 const defaultProps: RvButtonFCType = {
-	...rvButtonProps,
+	...rvButtonDefaultProps,
 };
 Default.args = {
 	children: "Default",
@@ -46,7 +47,7 @@ Default.play = async ({ canvasElement }) => {
  */
 export const OutLine = Template.bind({});
 const outLineProps: RvButtonFCType = {
-	...rvButtonProps,
+	...rvButtonDefaultProps,
 	bgColor: "white500",
 	borderWidth: "1px",
 	borderColor: "black500",

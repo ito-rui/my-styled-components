@@ -1,15 +1,9 @@
-/* eslint no-nested-ternary: off */
-
 import styled from "styled-components";
-import { breakpoint } from "../../config/theme";
-import type { BaseDivType } from "../../../types/components/Div";
+import type { StyledSpanType } from "../../../types";
+import { breakpoint } from "../../config";
 import {
-	getWidth,
-	getHeight,
-	getPosition,
 	getBgColor,
 	getColor,
-	getBoxShadow,
 	getBorderRadius,
 	getBorderColor,
 	getBorderWidth,
@@ -26,15 +20,9 @@ import {
 	getTransition,
 	getFontSize,
 	getFontWeight,
-	getLineHeight,
 } from "../../../utils/getStyle";
 
-const StyledDiv = styled.div<BaseDivType>`
-	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
-	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
-	display: ${({ display }) => display ?? "block"};
-	position: ${({ position }) => getPosition({ position }) ?? " none"};
-	box-shadow: ${({ theme, boxShadow }) => getBoxShadow({ boxShadow }) ?? theme.shadow.none};
+const StyledSpan = styled.span<StyledSpanType>`
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
 	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white500};
 	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.white500};
@@ -53,22 +41,16 @@ const StyledDiv = styled.div<BaseDivType>`
 	transition: ${({ theme, transition }) => getTransition({ transition }) ?? theme.transition.box.base};
 	font-size: ${({ theme, fontSize }) => getFontSize({ fontSize }) ?? theme.fonts.fontSizes.base};
 	font-weight: ${({ theme, fontWeight }) => getFontWeight({ fontWeight }) ?? theme.fonts.fontWeights.normal};
-	line-height: ${({ theme, lineHeight }) => getLineHeight({ lineHeight }) ?? theme.sizes.lineHeights.normal};
-	&:hover {
+	&:hover: {
 		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.black500};
-		background-color: ${({ theme, hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? theme.colors.systemColors.white500};
 	}
 
 	${({ theme, ...props }) =>
 		breakpoint.map((breakpoint) => {
 			const {
-				width,
-				height,
-				position,
 				borderRadius,
 				borderColor,
 				borderWidth,
-				boxShadow,
 				bgColor,
 				textColor,
 				padding,
@@ -84,17 +66,12 @@ const StyledDiv = styled.div<BaseDivType>`
 				transition,
 				fontSize,
 				fontWeight,
-				lineHeight,
 				hover,
 			} = { ...props };
 			return theme.breakpoint[breakpoint]`
-                width: ${getWidth({ width, breakpoint }) ?? theme.sizes.widths.auto};
-                height: ${getHeight({ height, breakpoint }) ?? theme.sizes.heights.auto};
-		        position: ${getPosition({ position, breakpoint }) ?? "none"};
                 border-radius: ${getBorderRadius({ borderRadius, breakpoint }) ?? theme.sizes.radius.sx};
                 border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? theme.sizes.radius.sx};
-                box-shadow: ${getBoxShadow({ boxShadow, breakpoint }) ?? theme.shadow.none};
                 background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.black500};
                 padding: ${getPadding({ padding, breakpoint }) ?? theme.sizes.spaces[0]};
@@ -110,13 +87,11 @@ const StyledDiv = styled.div<BaseDivType>`
                 transition: ${getTransition({ transition, breakpoint }) ?? theme.transition.box.base};
                 font-size: ${getFontSize({ fontSize, breakpoint }) ?? theme.fonts.fontSizes.base};
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
-                line-height: ${getLineHeight({ lineHeight, breakpoint }) ?? theme.sizes.lineHeights.normal};
                 &:hover {
                     color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.black500};
-                    background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? "none"};
                 };
             `;
 		})}
 `;
 
-export default StyledDiv;
+export default StyledSpan;
