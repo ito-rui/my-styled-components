@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { breakpoint } from "../../config/theme";
 import StyledDiv from "./base";
-import type { FlexType } from "../../../types/components/Div";
+import type { StyledFlexType } from "../../../types/components/Div";
 import { getDisplay, getFlexDirection, getJustifyContent, getAlignItems } from "../../../utils/getStyle";
 
-const StyledFlex = styled(StyledDiv)<FlexType>`
+const StyledFlex = styled(StyledDiv)<StyledFlexType>`
 	display: ${({ display }) => getDisplay({ display }) ?? "flex"};
 	flex-direction: ${({ flexDirection }) => getFlexDirection({ flexDirection }) ?? "row"};
 	justify-content: ${({ justifyContent }) => getJustifyContent({ justifyContent }) ?? "center"};

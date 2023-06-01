@@ -1,12 +1,12 @@
 /* eslint no-nested-ternary: off */
 
 import styled from "styled-components";
-import { SidebarType, SidebarHeaderType } from "../../../types/components/Div";
+import { StyledSidebarType, StyledSidebarHeaderType } from "../../../types/components/Div";
 import StyledDiv from "./base";
 import StyledFlex from "./flex";
 import { isValidSystemColorsKey } from "../../config/theme";
 
-export const StyledSidebar = styled(StyledDiv)<SidebarType>`
+export const StyledSidebar = styled(StyledDiv)<StyledSidebarType>`
 	width: ${({ width }) => width ?? "250px"};
 	background-color: ${({ theme, bgColor }) =>
 		bgColor
@@ -37,7 +37,7 @@ export const StyledSidebar = styled(StyledDiv)<SidebarType>`
     `};
 `;
 
-export const StyledSidebarHeader = styled(StyledFlex)<SidebarHeaderType>`
+export const StyledSidebarHeader = styled(StyledFlex)<StyledSidebarHeaderType>`
 	width: ${({ theme, width }) => width ?? theme.sizes.boxSizes.full};
 	height: 50px;
 	display: flex;

@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import { breakpoint } from "../../config/theme";
-import type { BaseDivType } from "../../../types/components/Div";
+import type { StyledDivType } from "../../../types/components/Div";
 import {
 	getWidth,
 	getHeight,
@@ -29,7 +29,7 @@ import {
 	getLineHeight,
 } from "../../../utils/getStyle";
 
-const StyledDiv = styled.div<BaseDivType>`
+const StyledDiv = styled.div<StyledDivType>`
 	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
 	display: ${({ display }) => display ?? "block"};

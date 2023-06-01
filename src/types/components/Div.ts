@@ -2,45 +2,45 @@ import type { ReactNode, HTMLAttributes } from "react";
 import type * as CSSCustomProperties from "../CSSProperties";
 import type { BaseCSSDivType } from "../CSSProperties";
 
-export type BaseDivHoverType = {
+export type StyledDivHoverType = {
 	hover?: BaseCSSDivType & {};
 };
 
-export type BaseDivType = BaseCSSDivType & BaseDivHoverType;
+export type StyledDivType = BaseCSSDivType & StyledDivHoverType;
 
-export type FlexType = BaseDivType & {
+export type StyledFlexType = StyledDivType & {
 	flexDirection?: CSSCustomProperties.FlexDirectionType;
 	justifyContent?: CSSCustomProperties.JustifyContentType;
 	alignItems?: CSSCustomProperties.AlignItemsType;
 };
 
-export type VStackType = FlexType;
+export type StyledVStackType = StyledFlexType;
 
-export type HStackType = FlexType;
+export type StyledHStackType = StyledFlexType;
 
-export type CenterType = BaseDivType;
+export type StyledCenterType = StyledDivType;
 
-export type ShadowCenterType = CenterType;
+export type StyledShadowCenterType = StyledCenterType;
 
-export type SidebarType = BaseDivType;
+export type StyledSidebarType = StyledDivType;
 
-export type SidebarHeaderType = FlexType;
+export type StyledSidebarHeaderType = StyledFlexType;
 
 type StylesType =
-	| BaseDivType
-	| FlexType
-	| VStackType
-	| HStackType
-	| CenterType
-	| ShadowCenterType
-	| SidebarType
-	| SidebarHeaderType;
+	| StyledDivType
+	| StyledFlexType
+	| StyledVStackType
+	| StyledHStackType
+	| StyledCenterType
+	| StyledShadowCenterType
+	| StyledSidebarType
+	| StyledSidebarHeaderType;
 
 export type BasePropsType = {
 	[props: string]: object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
 	children?: ReactNode;
 };
 
-export type RvBoxFCType = BaseDivType & BasePropsType;
+export type RvBoxFCType = StyledDivType & BasePropsType;
 
-export type RvFlexFCType = FlexType & BasePropsType;
+export type RvFlexFCType = StyledFlexType & BasePropsType;
