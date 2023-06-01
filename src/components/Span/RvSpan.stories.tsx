@@ -2,7 +2,7 @@
 
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
-import theme from "../config/theme";
+import { theme, GlobalStyle } from "../config";
 import { RvSpan } from "./index";
 import type { RvSpanFCType } from "../../types/components/Span";
 import { rvSpanDefaultProps } from "./RvSpan";
@@ -18,6 +18,7 @@ export default {
 
 const Template: Story<RvSpanFCType> = ({ children, ...args }) => (
 	<ThemeProvider theme={theme}>
+		<GlobalStyle />
 		<RvSpan {...args}>{children}</RvSpan>
 	</ThemeProvider>
 );

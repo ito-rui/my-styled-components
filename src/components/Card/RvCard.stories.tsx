@@ -3,28 +3,28 @@
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
-import { RvBox } from ".";
-import { RvBoxFCType } from "../../types/components/Div";
-import { rvDefaultProps } from "./RvBox";
+import { RvCard } from ".";
+import { RvCardFCType } from "../../types/components/Card";
+import { rvCardDefaultProps } from "./RvCard";
 
 export default {
-	title: "Components/Box/RvBox",
-	component: RvBox,
+	title: "Components/Card/RvCard",
+	component: RvCard,
 	tags: ["autodocs"],
-} as Meta<RvBoxFCType>;
+} as Meta<RvCardFCType>;
 
-const Template: Story<RvBoxFCType> = ({ children, ...props }) => {
+const Template: Story<RvCardFCType> = ({ children, ...props }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<RvBox {...props}>{children}</RvBox>
+			<RvCard {...props}>{children}</RvCard>
 		</ThemeProvider>
 	);
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvBoxFCType = {
-	...rvDefaultProps,
+const DefaultProps: RvCardFCType = {
+	...rvCardDefaultProps,
 };
 
 Default.args = { children: "Default", ...DefaultProps };

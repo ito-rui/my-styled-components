@@ -22,16 +22,16 @@ export const StyledHStack = styled(StyledFlex)<StyledHStackType>`
 
 export const StyledVStack = styled(StyledFlex)<StyledVStackType>`
 	flex-direction: column;
-	& > * {
+	& > *:not(:last-child) {
 		margin-bottom: ${({ theme, marginBottom }) => getMarginBottom({ marginBottom }) ?? theme.sizes.spaces[2]};
 	}
 	${({ theme, ...props }) =>
 		breakpoint.map((breakpoint) => {
 			const { marginBottom } = { ...props };
 			return theme.breakpoint[breakpoint]`
-                flex-direction: row;
+                flex-direction: column;
 	            & > *:not(:last-child) {
-		            margin-right: ${getMarginBottom({ marginBottom, breakpoint }) ?? theme.sizes.spaces[2]};
+		            margin-bottom: ${getMarginBottom({ marginBottom, breakpoint }) ?? theme.sizes.spaces[2]};
             `;
 		})}
 `;

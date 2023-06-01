@@ -3,7 +3,7 @@
 import type { Meta, Story } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { ThemeProvider } from "styled-components";
-import theme from "../config/theme";
+import { theme, GlobalStyle } from "../config";
 import { RvIconButton } from "./index";
 import type { RvIconButtonFCType } from "../../types/components/Button";
 import { rvIconButtonDefaultProps } from "./RvIconButton";
@@ -20,6 +20,7 @@ export default {
 
 const Template: Story<RvIconButtonFCType> = ({ children, ...args }) => (
 	<ThemeProvider theme={theme}>
+		<GlobalStyle />
 		<RvIconButton {...args}>{children}</RvIconButton>
 	</ThemeProvider>
 );

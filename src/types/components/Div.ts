@@ -16,7 +16,7 @@ export type StyledFlexType = StyledDivType & {
 
 export type StyledVStackType = StyledFlexType;
 
-export type StyledHStackType = StyledFlexType;
+export type StyledHStackType = StyledVStackType;
 
 export type StyledCenterType = StyledDivType;
 
@@ -44,3 +44,8 @@ export type BasePropsType = {
 export type RvBoxFCType = StyledDivType & BasePropsType;
 
 export type RvFlexFCType = StyledFlexType & BasePropsType;
+
+export type RvVStackFCType = StyledVStackType &
+	BasePropsType & {
+		space?: CSSCustomProperties.MarginBottomType | CSSCustomProperties.MarginRightType;
+	};
