@@ -45,7 +45,7 @@ export type RvBoxFCType = StyledDivType & BasePropsType;
 
 export type RvFlexFCType = StyledFlexType & BasePropsType;
 
-export type RvVStackFCType = StyledVStackType &
+export type RvStackFCType = (StyledVStackType | StyledHStackType) &
 	BasePropsType & {
 		space?: CSSCustomProperties.MarginBottomType | CSSCustomProperties.MarginRightType;
 	};

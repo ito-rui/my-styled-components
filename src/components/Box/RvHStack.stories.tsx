@@ -3,14 +3,14 @@
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
-import { RvVStack } from ".";
+import { RvHStack } from ".";
 import { RvButton } from "../Button";
 import { RvStackFCType } from "../../types/components/Div";
-import { rvVStackDefaultProps } from "./RvVStack";
+import { rvHStackDefaultProps } from "./RvHStack";
 
 export default {
-	title: "Components/Box/RvVStack",
-	component: RvVStack,
+	title: "Components/Box/RvHStack",
+	component: RvHStack,
 	tags: ["autodocs"],
 } as Meta<RvStackFCType>;
 
@@ -18,14 +18,14 @@ const Template: Story<RvStackFCType> = ({ children, ...props }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<RvVStack {...props}>{children}</RvVStack>
+			<RvHStack {...props}>{children}</RvHStack>
 		</ThemeProvider>
 	);
 };
 
 export const Default = Template.bind({});
 const DefaultProps: RvStackFCType = {
-	...rvVStackDefaultProps,
+	...rvHStackDefaultProps,
 };
 
 Default.args = {
