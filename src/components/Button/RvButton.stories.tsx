@@ -7,7 +7,6 @@ import { theme, GlobalStyle } from "../config";
 import { RvButton } from "./index";
 import type { RvButtonFCType } from "../../types/components/Button";
 import { rvButtonDefaultProps } from "./RvButton";
-import { MdSavedSearch } from "react-icons/md";
 
 export default {
 	title: "Components/Button/RvButton",

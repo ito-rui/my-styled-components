@@ -1,3 +1,6 @@
+/* eslint react/jsx-props-no-spreading: off */
+
+import { useMemo } from "react";
 import type { FC } from "react";
 import { StyledButton } from "./style";
 import type { RvIconButtonFCType, StyledIconButtonType } from "../../types";
@@ -10,10 +13,10 @@ export const rvIconButtonDefaultProps: StyledIconButtonType = {
 };
 
 const RvIconButton: FC<RvIconButtonFCType> = ({ children, ...props }) => {
-	const width = { ...props }.width ?? { ...rvIconButtonDefaultProps }.width;
-	const height = { ...props }.height ?? { ...rvIconButtonDefaultProps }.height;
-	const newProps = { ...props, width, height };
-	return <StyledButton {...newProps}>{children}</StyledButton>;
+	const { width = props.width ?? rvIconButtonDefaultProps.width, height = props.height ?? rvIconButtonDefaultProps.height } =
+		useMemo(() => props, [props]);
+	const newProps = useMemo(() => ({ ...props, width, height }), [props, width, height]);
+	return useMemo(() => <StyledButton {...newProps}>{children}</StyledButton>, [newProps]);
 };
 
 export default RvIconButton;

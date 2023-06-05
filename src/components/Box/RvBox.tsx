@@ -1,5 +1,6 @@
 /* eslint react/jsx-props-no-spreading: off */
 
+import { useMemo } from "react";
 import type { FC } from "react";
 import type { RvBoxFCType, StyledDivType } from "../../types/components/Div";
 import { StyledDiv } from "./style";
@@ -12,8 +13,8 @@ export const rvDefaultProps: StyledDivType = {
 };
 
 const RvBox: FC<RvBoxFCType> = ({ children, ...props }) => {
-	const newProps = { ...props };
-	return <StyledDiv {...newProps}>{children}</StyledDiv>;
+	const newProps = useMemo(() => ({ ...props }), [props]);
+	return useMemo(() => <StyledDiv {...newProps}>{children}</StyledDiv>, [newProps]);
 };
 
 export default RvBox;

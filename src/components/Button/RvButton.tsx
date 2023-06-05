@@ -1,5 +1,6 @@
 /* eslint react/jsx-props-no-spreading: off */
 
+import { useMemo } from "react";
 import type { FC } from "react";
 import { RvButtonFCType } from "../../types/components/Button";
 import { StyledButton } from "./style";
@@ -31,25 +32,35 @@ export const rvButtonDefaultProps: RvButtonFCType = {
 };
 
 const RvButton: FC<RvButtonFCType> = ({ children, ...props }) => {
-	const width = { ...props }.width ?? { ...rvButtonDefaultProps }.width;
-	const height = { ...props }.height ?? { ...rvButtonDefaultProps }.height;
-	const borderColor = { ...props }.borderColor ?? { ...props }.bgColor ?? { ...rvButtonDefaultProps }.borderColor;
-	const borderRadius = { ...props }.borderRadius ?? { ...rvButtonDefaultProps }.borderRadius;
-	const borderWidth = { ...props }.borderWidth ?? { ...rvButtonDefaultProps }.borderWidth;
-	const bgColor = { ...props }.bgColor ?? { ...rvButtonDefaultProps }.bgColor;
-	const textColor = { ...props }.textColor ?? { ...rvButtonDefaultProps }.textColor;
-	const hover = {
-		bgColor: { ...props }.hover?.bgColor ?? { ...rvButtonDefaultProps }.hover?.bgColor,
-		borderColor: { ...props }.hover?.borderColor ?? { ...rvButtonDefaultProps }.hover?.borderColor,
-	};
-	const iconStyle = { ...props }.iconStyle ?? "left";
-	const newProps = { ...props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover };
-	return (
-		<StyledButton {...newProps}>
-			{newProps.icon && iconStyle === "left" && newProps.icon}
-			{children}
-			{newProps.icon && iconStyle === "right" && newProps.icon}
-		</StyledButton>
+	const {
+		width = props.width ?? rvButtonDefaultProps.width,
+		height = props.height ?? rvButtonDefaultProps.height,
+		borderColor = props.borderColor ?? props.bgColor ?? rvButtonDefaultProps.borderColor,
+		borderRadius = props.borderRadius ?? rvButtonDefaultProps.borderRadius,
+		borderWidth = props.borderWidth ?? rvButtonDefaultProps.borderWidth,
+		bgColor = props.bgColor ?? rvButtonDefaultProps.bgColor,
+		textColor = props.textColor ?? rvButtonDefaultProps.textColor,
+		hover = {
+			bgColor: props.hover?.bgColor ?? rvButtonDefaultProps.hover?.bgColor,
+			borderColor: props.hover?.borderColor ?? rvButtonDefaultProps.hover?.borderColor,
+		},
+		iconStyle = props.iconStyle ?? "left",
+	} = useMemo(() => props, [props]);
+
+	const newProps = useMemo(
+		() => ({ ...props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover }),
+		[props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover]
+	);
+
+	return useMemo(
+		() => (
+			<StyledButton {...newProps}>
+				{newProps.icon && iconStyle === "left" && newProps.icon}
+				{children}
+				{newProps.icon && iconStyle === "right" && newProps.icon}
+			</StyledButton>
+		),
+		[children, newProps]
 	);
 };
 
