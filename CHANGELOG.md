@@ -1,6 +1,8 @@
 ## 0.5.18 (2023/6/5)
 
 -   ### Add `useMemo`
+-   ### Create `RvSidebar`, `RvMenu`, `RvMenuItem`, `RvSubMenu` Components
+-   ### Fix Modified to export style in Span/index.ts
 
 ## 0.5.17 (2023/6/1)
 
