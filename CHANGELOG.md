@@ -1,16 +1,20 @@
-## 0.5.18 (2023/6/5)
+## 0.5.19 (2023/06/06)
+
+-   ## Fixed a bug that padding and margin was not applied.
+
+## 0.5.18 (2023/06/05)
 
 -   ### Add `useMemo`
 -   ### Create `RvSidebar`, `RvMenu`, `RvMenuItem`, `RvSubMenu` Components
 -   ### Fix Modified to export style in Span/index.ts
 
-## 0.5.17 (2023/6/1)
+## 0.5.17 (2023/06/01)
 
 -   ### Create RvHStack Components
 -   ### Fix `RvVStackFCType` => `RvTackFCType`
 -   ### Add Add Export Flles
 
-## 0.4.17 (2023/6/1)
+## 0.4.17 (2023/06/01)
 
 -   ### Fix StyledVStack Components
 -   ### Add GlobalStyle
@@ -18,7 +22,7 @@
 -   ### Exprot GlobalStyle Components
 -   ### Create RvCard and RvCardHeader Components
 
-## 0.3.17 (2023/6/1)
+## 0.3.17 (2023/06/01)
 
 -   ### Fix Add `;` at the end of the property (style/\*.ts)
 -   ### Add Modified RvButton to be able to set icon.
