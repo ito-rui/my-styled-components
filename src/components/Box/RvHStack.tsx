@@ -9,17 +9,17 @@ export const rvHStackDefaultProps: StyledHStackType = {
 	width: "100%",
 	height: 20,
 	borderRadius: 0.5,
-	marginRight: 5,
+	space: 5,
 };
 
 const RvHStack: FC<RvStackFCType> = ({ children, ...props }) => {
 	const {
 		width = props.width ?? rvHStackDefaultProps.width,
 		borderRadius = props.borderRadius ?? rvHStackDefaultProps.borderRadius,
-		marginRight = props.space ?? rvHStackDefaultProps.marginBottom,
+		space = props.space ?? rvHStackDefaultProps.space,
 	} = useMemo(() => props, [props]);
 
-	const newProps = useMemo(() => ({ ...props, width, borderRadius, marginRight }), [props, width, borderRadius, marginRight]);
+	const newProps = useMemo(() => ({ ...props, width, borderRadius, space }), [props, width, borderRadius, space]);
 
 	return useMemo(() => <StyledHStack {...newProps}>{children}</StyledHStack>, [newProps]);
 };

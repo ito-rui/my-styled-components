@@ -1,3 +1,7 @@
+## 0.5.20 (2023/06/06)
+
+-   ## Fixed a bug that caused spaces to be applied to parent elements as well.
+
 ## 0.5.19 (2023/06/06)
 
 -   ## Fixed a bug that padding and margin was not applied.

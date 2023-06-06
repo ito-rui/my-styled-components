@@ -14,9 +14,13 @@ export type StyledFlexType = StyledDivType & {
 	alignItems?: CSSCustomProperties.AlignItemsType;
 };
 
-export type StyledVStackType = StyledFlexType;
+export type StyledVStackType = StyledFlexType & {
+	space?: CSSCustomProperties.MarginBottomType;
+};
 
-export type StyledHStackType = StyledVStackType;
+export type StyledHStackType = StyledFlexType & {
+	space?: CSSCustomProperties.MarginRightType;
+};
 
 export type StyledCenterType = StyledDivType;
 

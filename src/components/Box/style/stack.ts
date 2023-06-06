@@ -7,15 +7,15 @@ import { getMarginRight, getMarginBottom } from "../../../utils/getStyle";
 export const StyledHStack = styled(StyledFlex)<StyledHStackType>`
 	flex-direction: row;
 	& > *:not(:last-child) {
-		margin-right: ${({ theme, marginRight }) => getMarginRight({ marginRight }) ?? theme.sizes.spaces[2]};
+		margin-right: ${({ theme, space }) => getMarginRight({ marginRight: space }) ?? theme.sizes.spaces[2]};
 	}
 	${({ theme, ...props }) =>
 		breakpoint.map((breakpoint) => {
-			const { marginRight } = { ...props };
+			const { space } = { ...props };
 			return theme.breakpoint[breakpoint]`
                 flex-direction: row;
 	            & > *:not(:last-child) {
-		            margin-right: ${getMarginRight({ marginRight, breakpoint }) ?? theme.sizes.spaces[2]};
+		            margin-right: ${getMarginRight({ marginRight: space, breakpoint }) ?? theme.sizes.spaces[2]};
             `;
 		})}
 `;
@@ -23,15 +23,15 @@ export const StyledHStack = styled(StyledFlex)<StyledHStackType>`
 export const StyledVStack = styled(StyledFlex)<StyledVStackType>`
 	flex-direction: column;
 	& > *:not(:last-child) {
-		margin-bottom: ${({ theme, marginBottom }) => getMarginBottom({ marginBottom }) ?? theme.sizes.spaces[2]};
+		margin-bottom: ${({ theme, space }) => getMarginBottom({ marginBottom: space }) ?? theme.sizes.spaces[2]};
 	}
 	${({ theme, ...props }) =>
 		breakpoint.map((breakpoint) => {
-			const { marginBottom } = { ...props };
+			const { space } = { ...props };
 			return theme.breakpoint[breakpoint]`
                 flex-direction: column;
 	            & > *:not(:last-child) {
-		            margin-bottom: ${getMarginBottom({ marginBottom, breakpoint }) ?? theme.sizes.spaces[2]};
+		            margin-bottom: ${getMarginBottom({ marginBottom: space, breakpoint }) ?? theme.sizes.spaces[2]};
             `;
 		})}
 `;
