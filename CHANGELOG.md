@@ -1,6 +1,7 @@
 ## 0.5.20 (2023/06/06)
 
 -   ## Fixed a bug that caused spaces to be applied to parent elements as well.
+-   ## Remove the StyledSidebar and StyledSidebarHeader Components.
 
 ## 0.5.19 (2023/06/06)
 

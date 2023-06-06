@@ -26,7 +26,7 @@ export type StyledCenterType = StyledDivType;
 
 export type StyledShadowCenterType = StyledCenterType;
 
-export type StyledSidebarType = StyledDivType;
+export type StyledSidebarContainerType = StyledDivType;
 
 export type StyledSidebarHeaderType = StyledFlexType;
 
@@ -36,9 +36,7 @@ type StylesType =
 	| StyledVStackType
 	| StyledHStackType
 	| StyledCenterType
-	| StyledShadowCenterType
-	| StyledSidebarType
-	| StyledSidebarHeaderType;
+	| StyledShadowCenterType;
 
 export type BasePropsType = {
 	[props: string]: object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
