@@ -3,7 +3,7 @@
 import type { Meta, Story } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
-import { RvSidebar } from ".";
+import { RvSidebar, RvSidebarContainer, RvSidebarHeader, RvMenu, RvMenuItem, RvSubMenu } from ".";
 import { RvSidebarFCType } from "../../types/components/Sidebar";
 import { rvSidebarDefaultProps } from "./RvSidebar";
 
@@ -17,7 +17,10 @@ const Template: Story<RvSidebarFCType> = ({ children, ...props }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<RvSidebar {...props}>{children}</RvSidebar>
+			<RvSidebarContainer>
+				<RvSidebarHeader>SidebarHeader</RvSidebarHeader>
+				<RvSidebar {...props}>{children}</RvSidebar>
+			</RvSidebarContainer>
 		</ThemeProvider>
 	);
 };
@@ -27,4 +30,23 @@ const DefaultProps: RvSidebarFCType = {
 	...rvSidebarDefaultProps,
 };
 
-Default.args = { children: "Default", ...DefaultProps };
+Default.args = {
+	children: (
+		<RvMenu>
+			<RvMenuItem>MenuItem1</RvMenuItem>
+			<RvSubMenu label="SubMenu1">
+				<RvMenuItem>MenuItem2</RvMenuItem>
+				<RvMenuItem>MenuItem3</RvMenuItem>
+				<RvSubMenu label="SubMenu2">
+					<RvMenuItem>MenuItem4</RvMenuItem>
+				</RvSubMenu>
+			</RvSubMenu>
+			<RvSubMenu label="SubMenu3">
+				<RvSubMenu label="SubMenu4">
+					<RvMenuItem>MenuItem5</RvMenuItem>
+				</RvSubMenu>
+			</RvSubMenu>
+		</RvMenu>
+	),
+	...DefaultProps,
+};
