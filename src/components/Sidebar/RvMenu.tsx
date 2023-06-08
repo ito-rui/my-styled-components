@@ -7,7 +7,7 @@ import type { MenuProps } from "react-pro-sidebar";
 import type { RvMenuFCType } from "../../types/components/Sidebar";
 import systemColors from "../config/colors/systemColor";
 
-export const rvMenuDefaultProps: MenuProps = {
+export const defaultProps: MenuProps = {
 	rootStyles: {},
 	menuItemStyles: {
 		root: {
@@ -25,8 +25,8 @@ export const rvMenuDefaultProps: MenuProps = {
 
 const RvMenu: FC<RvMenuFCType> = ({ children, ...props }) => {
 	const {
-		rootStyles = props.rootStyles ?? rvMenuDefaultProps.rootStyles,
-		menuItemStyles = props.menuItemStyles ?? rvMenuDefaultProps.menuItemStyles,
+		rootStyles = props.rootStyles ?? defaultProps.rootStyles,
+		menuItemStyles = props.menuItemStyles ?? defaultProps.menuItemStyles,
 	} = useMemo(() => props, [props]);
 
 	const newProps = useMemo(() => ({ ...props, rootStyles, menuItemStyles }), [props, rootStyles, menuItemStyles]);

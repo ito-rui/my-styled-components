@@ -2,6 +2,10 @@
 
 -   ## Fix `StyledHStack` and `StyledVStack` Components
 -   ## Fix breakpoint
+-   ## Add breakpoint to RvSidebar
+-   ## Add display to RvSidebarContainer
+-   ## Add propertys to RvSidebarHeader
+-   ## Fix Rename defaultProps
 
 ## 0.6.21 (2023/06/08)
 

@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvMenu } from ".";
 import { RvMenuFCType } from "../../types/components/Sidebar";
-import { rvMenuDefaultProps } from "./RvMenu";
+import { defaultProps } from "./RvMenu";
 
 export default {
 	title: "Components/Sidebar/RvMenu",
@@ -24,7 +24,7 @@ const Template: Story<RvMenuFCType> = ({ children, ...props }) => {
 
 export const Default = Template.bind({});
 const DefaultProps: RvMenuFCType = {
-	...rvMenuDefaultProps,
+	...defaultProps,
 };
 
 Default.args = { children: "Default", ...DefaultProps };

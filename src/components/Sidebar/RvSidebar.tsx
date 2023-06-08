@@ -5,23 +5,27 @@ import type { FC } from "react";
 import { Sidebar } from "react-pro-sidebar";
 import type { SidebarProps } from "react-pro-sidebar";
 import type { RvSidebarFCType } from "../../types/components/Sidebar";
+import { breakpointValue } from "../config/breakpoints/breakpoint";
 
-export const rvSidebarDefaultProps: SidebarProps = {
+export const defaultProps: SidebarProps = {
 	width: "250px",
-	rootStyles: {
-		height: "100vh",
-	},
+	customBreakPoint: breakpointValue.md,
+	rootStyles: {},
 };
 
 const RvSidebar: FC<RvSidebarFCType> = ({ children, ...props }) => {
 	const {
-		width = props.width ?? rvSidebarDefaultProps.width,
+		width = props.width ?? defaultProps.width,
+		customBreakPoint = props.customBreakPoint ?? defaultProps.customBreakPoint,
 		rootStyles = {
-			height: props.rootStyles?.height ?? rvSidebarDefaultProps.rootStyles?.height,
+			height: props.rootStyles?.height ?? defaultProps.rootStyles?.height,
 		},
 	} = useMemo(() => props, [props]);
 
-	const newProps = useMemo(() => ({ ...props, width, rootStyles }), [props, width, rootStyles]);
+	const newProps = useMemo(
+		() => ({ ...props, width, customBreakPoint, rootStyles }),
+		[props, width, customBreakPoint, rootStyles]
+	);
 
 	return useMemo(() => <Sidebar {...newProps}>{children}</Sidebar>, [newProps, children]);
 };

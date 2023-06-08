@@ -6,6 +6,7 @@ import type { StyledDivType } from "../../../types/components/Div";
 import {
 	getWidth,
 	getHeight,
+	getDisplay,
 	getPosition,
 	getBgColor,
 	getColor,
@@ -32,7 +33,7 @@ import {
 const StyledDiv = styled.div<StyledDivType>`
 	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
-	display: ${({ display }) => display ?? "block"};
+	display: ${({ display }) => getDisplay({ display }) ?? "block"};
 	position: ${({ position }) => getPosition({ position }) ?? " none"};
 	box-shadow: ${({ theme, boxShadow }) => getBoxShadow({ boxShadow }) ?? theme.shadow.none};
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
@@ -64,6 +65,7 @@ const StyledDiv = styled.div<StyledDivType>`
 			const {
 				width,
 				height,
+				display,
 				position,
 				borderRadius,
 				borderColor,
@@ -90,6 +92,7 @@ const StyledDiv = styled.div<StyledDivType>`
 			return theme.breakpoint[breakpoint]`
                 width: ${getWidth({ width, breakpoint }) ?? theme.sizes.widths.auto};
                 height: ${getHeight({ height, breakpoint }) ?? theme.sizes.heights.auto};
+                display: ${getDisplay({ display, breakpoint }) ?? "block"};
 		        position: ${getPosition({ position, breakpoint }) ?? "none"};
                 border-radius: ${getBorderRadius({ borderRadius, breakpoint }) ?? theme.sizes.radius.sx};
                 border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};

@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvSidebar, RvSidebarContainer, RvSidebarHeader, RvMenu, RvMenuItem, RvSubMenu } from ".";
 import { RvSidebarFCType } from "../../types/components/Sidebar";
-import { rvSidebarDefaultProps } from "./RvSidebar";
+import { defaultProps } from "./RvSidebar";
 
 export default {
 	title: "Components/Sidebar/RvSidebar",
@@ -18,8 +18,10 @@ const Template: Story<RvSidebarFCType> = ({ children, ...props }) => {
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<RvSidebarContainer>
-				<RvSidebarHeader>SidebarHeader</RvSidebarHeader>
-				<RvSidebar {...props}>{children}</RvSidebar>
+				<RvSidebar {...props}>
+					<RvSidebarHeader>SidebarHeader</RvSidebarHeader>
+					{children}
+				</RvSidebar>
 			</RvSidebarContainer>
 		</ThemeProvider>
 	);
@@ -27,7 +29,7 @@ const Template: Story<RvSidebarFCType> = ({ children, ...props }) => {
 
 export const Default = Template.bind({});
 const DefaultProps: RvSidebarFCType = {
-	...rvSidebarDefaultProps,
+	...defaultProps,
 };
 
 Default.args = {

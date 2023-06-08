@@ -6,7 +6,7 @@ import { MenuItem } from "react-pro-sidebar";
 import type { MenuItemProps } from "react-pro-sidebar";
 import type { RvMenuItemFCType } from "../../types/components/Sidebar";
 
-export const rvMenuItemDefaultProps: MenuItemProps = {};
+export const defaultProps: MenuItemProps = {};
 
 const RvMenuItem: FC<RvMenuItemFCType> = ({ children, ...props }) => {
 	const newProps = useMemo(() => ({ ...props }), [props]);

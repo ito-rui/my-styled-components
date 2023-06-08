@@ -5,8 +5,9 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvSidebar, RvMenu, RvMenuItem, RvSubMenu } from ".";
 import { RvMenuItemFCType, RvSubMenuFCType } from "../../types/components/Sidebar";
-import { rvMenuItemDefaultProps } from "./RvMenuItem";
-import { rvSubMenuDefaultProps } from "./RvSubMenu";
+import { defaultProps } from "./RvSubMenu";
+import { defaultProps as rvMenuItemDefaultProps } from "./RvMenuItem";
+import { defaultProps as rvSidebarDefaultProps } from "./RvSidebar";
 
 export default {
 	title: "Components/Sidebar/RvSubMenu",
@@ -18,7 +19,7 @@ const Template: Story<RvMenuItemFCType> = ({ children }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<RvSidebar rootStyles={{ height: "auto" }}>
+			<RvSidebar {...rvSidebarDefaultProps}>
 				<RvMenu>{children}</RvMenu>
 			</RvSidebar>
 		</ThemeProvider>
@@ -26,14 +27,14 @@ const Template: Story<RvMenuItemFCType> = ({ children }) => {
 };
 
 export const Default = Template.bind({});
-const defaultProps: RvSubMenuFCType = {
-	...rvSubMenuDefaultProps,
+const DefaultProps: RvSubMenuFCType = {
+	...defaultProps,
 };
 
 Default.args = {
 	children: (
-		<RvSubMenu label="SubMenu1" {...defaultProps}>
-			<RvMenuItem {...rvMenuItemDefaultProps}>MenuItem1</RvMenuItem>
+		<RvSubMenu label="SubMenu1" {...DefaultProps}>
+			<RvMenuItem {...defaultProps}>MenuItem1</RvMenuItem>
 		</RvSubMenu>
 	),
 };
