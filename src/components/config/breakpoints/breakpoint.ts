@@ -5,7 +5,7 @@ export const breakpoint: MediaType[] = ["xs", "sm", "md", "lg", "xl"];
 
 export const breakpointValue = {
 	xs: "428px",
-	sm: "600px",
+	sm: "428px",
 	md: "840px",
 	lg: "1025px",
 	xl: "1280px",
@@ -30,7 +30,7 @@ export const sm = (
 	first: CSSObject | TemplateStringsArray,
 	...interpolations: SimpleInterpolation[]
 ): FlattenSimpleInterpolation => css`
-	@media (min-width: 600px) {
+	@media (min-width: 428px) and (max-width: 600px) {
 		${css(first, ...interpolations)}
 	}
 `;
@@ -42,7 +42,7 @@ export const md = (
 	first: CSSObject | TemplateStringsArray,
 	...interpolations: SimpleInterpolation[]
 ): FlattenSimpleInterpolation => css`
-	@media (min-width: 840px) {
+	@media (min-width: 600px) and (max-width: 1025px) {
 		${css(first, ...interpolations)}
 	}
 `;
@@ -54,7 +54,7 @@ export const lg = (
 	first: CSSObject | TemplateStringsArray,
 	...interpolations: SimpleInterpolation[]
 ): FlattenSimpleInterpolation => css`
-	@media (min-width: 1025px) {
+	@media (min-width: 1025px) and (max-width: 1280px) {
 		${css(first, ...interpolations)}
 	}
 `;

@@ -2,17 +2,23 @@
 
 import { useMemo } from "react";
 import type { FC } from "react";
-import type { RvStackFCType, StyledHStackType } from "../../types";
+import type { RvHStackFCType, StyledHStackType } from "../../types";
 import { StyledHStack } from "./style";
 
 export const rvHStackDefaultProps: StyledHStackType = {
 	width: "100%",
 	height: 20,
 	borderRadius: 0.5,
-	space: 5,
+	space: {
+		xs: 1,
+		sm: 2,
+		md: 5,
+		lg: 5,
+		xl: 5,
+	},
 };
 
-const RvHStack: FC<RvStackFCType> = ({ children, ...props }) => {
+const RvHStack: FC<RvHStackFCType> = ({ children, ...props }) => {
 	const {
 		width = props.width ?? rvHStackDefaultProps.width,
 		borderRadius = props.borderRadius ?? rvHStackDefaultProps.borderRadius,

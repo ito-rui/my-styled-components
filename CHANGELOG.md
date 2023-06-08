@@ -1,3 +1,8 @@
+## 0.6.22 (2023/06/08)
+
+-   ## Fix `StyledHStack` and `StyledVStack` Components
+-   ## Fix breakpoint
+
 ## 0.6.21 (2023/06/08)
 
 -   ## Rename Style File

@@ -5,16 +5,16 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvHStack } from ".";
 import { RvButton } from "../Button";
-import { RvStackFCType } from "../../types/components/Div";
+import { RvHStackFCType } from "../../types/components/Div";
 import { rvHStackDefaultProps } from "./RvHStack";
 
 export default {
 	title: "Components/Box/RvHStack",
 	component: RvHStack,
 	tags: ["autodocs"],
-} as Meta<RvStackFCType>;
+} as Meta<RvHStackFCType>;
 
-const Template: Story<RvStackFCType> = ({ children, ...props }) => {
+const Template: Story<RvHStackFCType> = ({ children, ...props }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
@@ -24,7 +24,7 @@ const Template: Story<RvStackFCType> = ({ children, ...props }) => {
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvStackFCType = {
+const DefaultProps: RvHStackFCType = {
 	...rvHStackDefaultProps,
 };
 
