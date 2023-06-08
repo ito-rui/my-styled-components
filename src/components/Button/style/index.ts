@@ -1,4 +1,4 @@
-import StyledButton from "./base";
-import StyledIconButton from "./icon";
+import StyledButton from "./StyledButton";
+import StyledIconButton from "./StyledIconButton";
 
 export { StyledButton, StyledIconButton };

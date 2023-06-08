@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { StyledIconButtonType } from "../../../types";
 import { breakpoint } from "../../config";
-import StyledButton from "./base";
+import StyledButton from "./StyledButton";
 import { getDisplay, getAlignItems, getJustifyContent } from "../../../utils";
 
 const StyledIconButton = styled(StyledButton)<StyledIconButtonType>`

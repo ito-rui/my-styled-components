@@ -1,3 +1,3 @@
-import StyledSpan from "./base";
+import StyledSpan from "./StyledSpan";
 
 export { StyledSpan };

@@ -69,6 +69,8 @@ export type DisplayType = CSSProperties["display"] | ResponsiveType<CSSPropertie
 
 export type FlexDirectionType = CSSProperties["flexDirection"] | ResponsiveType<CSSProperties["flexDirection"]>;
 
+export type FlexWrapType = CSSProperties["flexWrap"] | ResponsiveType<CSSProperties["flexWrap"]>;
+
 export type JustifyContentType = CSSProperties["justifyContent"] | ResponsiveType<CSSProperties["justifyContent"]>;
 
 export type AlignItemsType = CSSProperties["alignItems"] | ResponsiveType<CSSProperties["alignItems"]>;

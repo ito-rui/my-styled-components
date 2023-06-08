@@ -10,6 +10,7 @@ export type StyledDivType = BaseCSSDivType & StyledDivHoverType;
 
 export type StyledFlexType = StyledDivType & {
 	flexDirection?: CSSCustomProperties.FlexDirectionType;
+	flexWrap?: CSSCustomProperties.FlexWrapType;
 	justifyContent?: CSSCustomProperties.JustifyContentType;
 	alignItems?: CSSCustomProperties.AlignItemsType;
 };
@@ -30,16 +31,8 @@ export type StyledSidebarContainerType = StyledDivType;
 
 export type StyledSidebarHeaderType = StyledFlexType;
 
-type StylesType =
-	| StyledDivType
-	| StyledFlexType
-	| StyledVStackType
-	| StyledHStackType
-	| StyledCenterType
-	| StyledShadowCenterType;
-
 export type BasePropsType = {
-	[props: string]: object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
+	[props: string]: object | ReactNode | HTMLAttributes<HTMLDivElement>;
 	children?: ReactNode;
 };
 

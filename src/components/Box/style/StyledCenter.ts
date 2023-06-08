@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { breakpoint } from "../../config/theme";
-import StyledDiv from "./base";
+import StyledDiv from "./StyledDiv";
 import type { StyledCenterType, StyledShadowCenterType } from "../../../types/components/Div";
 import { getBoxShadow } from "../../../utils/getStyle";
 

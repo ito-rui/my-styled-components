@@ -106,7 +106,12 @@ export type GetFontSizeType = {
 };
 
 export type GetDisplayType = {
-	display?: CSSCustomProperties.DisplayType;
+	display: CSSCustomProperties.DisplayType;
+	breakpoint?: CSSCustomProperties.MediaType;
+};
+
+export type GetFlexWrapType = {
+	flexWrap: CSSCustomProperties.FlexWrapType;
 	breakpoint?: CSSCustomProperties.MediaType;
 };
 

@@ -41,7 +41,7 @@ const StyledSpan = styled.span<StyledSpanType>`
 	transition: ${({ theme, transition }) => getTransition({ transition }) ?? theme.transition.box.base};
 	font-size: ${({ theme, fontSize }) => getFontSize({ fontSize }) ?? theme.fonts.fontSizes.base};
 	font-weight: ${({ theme, fontWeight }) => getFontWeight({ fontWeight }) ?? theme.fonts.fontWeights.normal};
-	&:hover: {
+	&:hover {
 		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.black500};
 	}
 

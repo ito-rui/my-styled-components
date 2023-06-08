@@ -25,6 +25,7 @@ import getAlignItems from "./getAlignItems";
 import getPosition from "./getPosition";
 import getFontWeight from "./getFontWeight";
 import getLineHeight from "./getLineHeight";
+import getFlexWrap from "./getFlexWrap";
 
 export {
 	getWidth,
@@ -54,4 +55,5 @@ export {
 	getPosition,
 	getFontWeight,
 	getLineHeight,
+	getFlexWrap,
 };

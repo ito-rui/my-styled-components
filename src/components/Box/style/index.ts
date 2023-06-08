@@ -1,6 +1,6 @@
-import StyledDiv from "./base";
-import StyledFlex from "./flex";
+import StyledDiv from "./StyledDiv";
+import StyledFlex from "./StyledFlex";
 
 export { StyledDiv, StyledFlex };
-export { StyledCenter, StyledShadowCenter } from "./center";
-export { StyledHStack, StyledVStack } from "./stack";
+export { StyledCenter, StyledShadowCenter } from "./StyledCenter";
+export { StyledHStack, StyledVStack } from "./StyledStack";

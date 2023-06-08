@@ -3,8 +3,16 @@ import type { MediaType } from "../../../types/CSSProperties";
 
 export const breakpoint: MediaType[] = ["xs", "sm", "md", "lg", "xl"];
 
+export const breakpointValue = {
+	xs: "428px",
+	sm: "600px",
+	md: "840px",
+	lg: "1025px",
+	xl: "1280px",
+};
+
 /**
- * max-width`370px`（iPhone12Pro）
+ * max-width`428px`（iPhone12Pro）
  */
 export const xs = (
 	first: CSSObject | TemplateStringsArray,
