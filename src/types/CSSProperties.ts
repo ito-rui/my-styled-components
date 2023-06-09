@@ -176,8 +176,6 @@ export type BaseCSSDivType = BaseWidthType &
 
 export type BaseCSSButtonType = BaseCSSDivType & BaseCursorType;
 
-export type BaseCSSInputType = BaseCSSDivType;
-
 export type BaseCSSSpanType = BaseColorType &
 	BaseFontType &
 	BaseMarginType &
@@ -185,3 +183,10 @@ export type BaseCSSSpanType = BaseColorType &
 	BaseBorderType &
 	BaseTextType &
 	BaseTransitionType;
+
+export type BaseCSSInputType = BaseCSSSpanType &
+	BaseBoxShadowType &
+	BaseBorderType & {
+		width?: CSSProperties["width"];
+		height?: CSSProperties["height"];
+	};

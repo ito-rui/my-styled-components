@@ -1,3 +1,7 @@
+## 0.7.23 (2023/06/09)
+
+-   ## Create `RvInput` Components
+
 ## 0.6.23 (2023/06/09)
 
 -   ## Create New Components
