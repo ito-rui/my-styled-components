@@ -1,3 +1,8 @@
+## 0.6.23 (2023/06/09)
+
+-   ## Create New Components
+-   ## Refactoring `BasePropsType` to Types Files
+
 ## 0.6.22 (2023/06/08)
 
 -   ## Fix `StyledHStack` and `StyledVStack` Components
