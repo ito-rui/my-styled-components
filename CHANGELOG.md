@@ -1,4 +1,4 @@
-## 0.7.24 (2023/06/09)
+## 0.8.24 (2023/06/09)
 
 -   ## Fixed problem with GlobalStyle failing to load
 
