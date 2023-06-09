@@ -15,11 +15,13 @@ export default [
 				file: pkg.main,
 				format: "cjs",
 				sourcemap: false,
+				interop: "compat",
 			},
 			{
 				file: pkg.module,
 				format: "esm",
 				sourcemap: false,
+				interop: "compat",
 			},
 		],
 		plugins: [

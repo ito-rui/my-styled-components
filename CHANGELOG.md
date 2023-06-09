@@ -1,3 +1,7 @@
+## 0.7.24 (2023/06/09)
+
+-   ## Fixed problem with GlobalStyle failing to load
+
 ## 0.7.23 (2023/06/09)
 
 -   ## Create `RvInput` Components
