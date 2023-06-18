@@ -10,6 +10,7 @@ export const defaultProps: SubMenuProps = {};
 
 const RvSubMenu: FC<RvSubMenuFCType> = ({ children, ...props }) => {
 	const newProps = useMemo(() => ({ ...props }), [props]);
+
 	return useMemo(() => <SubMenu {...newProps}>{children}</SubMenu>, [newProps]);
 };
 

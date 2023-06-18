@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvBox } from ".";
 import { RvBoxFCType } from "../../types/components/Div";
-import { rvDefaultProps } from "./RvBox";
+import { defaultProps as rvBoxDefaultProps } from "./RvBox";
 
 export default {
 	title: "Components/Box/RvBox",
@@ -23,8 +23,11 @@ const Template: Story<RvBoxFCType> = ({ children, ...props }) => {
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvBoxFCType = {
-	...rvDefaultProps,
+const defaultProps: RvBoxFCType = {
+	...rvBoxDefaultProps,
+	width: 30,
+	height: 10,
+	boxShadow: "md",
 };
 
-Default.args = { children: "Default", ...DefaultProps };
+Default.args = { children: "Default", ...defaultProps };

@@ -7,7 +7,7 @@ const transition = {
 	input: {
 		base: "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
 	},
-};
+} as const;
 
 export type TransitionKey = keyof typeof transition;
 

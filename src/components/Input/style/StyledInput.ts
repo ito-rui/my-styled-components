@@ -29,8 +29,8 @@ const StyledInput = styled.input<StyledInputType>`
 	height: ${({ height }) => getHeight({ height }) ?? ""};
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
 	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white500};
-	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.white500};
-	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.black500};
+	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.black500};
+	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.white500};
 	border-width: ${({ theme, borderWidth }) => getBorderWidth({ borderWidth }) ?? theme.sizes.radius.sx};
 	padding: ${({ padding }) => getPadding({ padding }) ?? ""};
 	padding-top: ${({ paddingTop }) => getPaddingTop({ paddingTop }) ?? ""};
@@ -51,7 +51,8 @@ const StyledInput = styled.input<StyledInputType>`
 	}
 
 	&:focus {
-		background-color: ${({ theme, focus }) => getBgColor({ bgColor: focus?.bgColor }) ?? theme.colors.systemColors.white500};
+		background-color: ${({ theme, focus }) => getBgColor({ bgColor: focus?.bgColor }) ?? theme.colors.systemColors.black500};
+		outline-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.black400};
 	}
 
 	&::placeholder {
@@ -91,10 +92,10 @@ const StyledInput = styled.input<StyledInputType>`
                 width: ${getWidth({ width }) ?? ""};
 	            height: ${getHeight({ height }) ?? ""};
                 border-radius: ${getBorderRadius({ borderRadius, breakpoint }) ?? theme.sizes.radius.sx};
-                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};
+                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white400};
                 border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? theme.sizes.radius.sx};
-                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.white500};
-                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 padding: ${getPadding({ padding, breakpoint }) ?? ""};
                 padding-right: ${getPaddingRight({ paddingRight, breakpoint }) ?? ""};
                 padding-top: ${getPaddingTop({ paddingTop, breakpoint }) ?? ""};
@@ -110,17 +111,23 @@ const StyledInput = styled.input<StyledInputType>`
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
 
                 &:hover {
-                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 };
 
                 &:focus {
-		            background-color: ${getBgColor({ bgColor: focus?.bgColor }) ?? theme.colors.systemColors.white500};
-	            }
+		            background-color: ${getBgColor({ bgColor: focus?.bgColor }) ?? theme.colors.systemColors.black500};
+                    border-color: ${
+						getBorderColor({ borderColor: focus?.borderColor, breakpoint }) ?? theme.colors.systemColors.black400
+					};
+                    outline-color: ${
+						getBorderColor({ borderColor: focus?.borderColor, breakpoint }) ?? theme.colors.systemColors.black400
+					};
+	            };
 
 	            &::placeholder {
-		            color: ${getColor({ textColor: placeholders?.textColor }) ?? theme.colors.systemColors.black100};
+		            color: ${getColor({ textColor: placeholders?.textColor }) ?? theme.colors.systemColors.white200};
 		            opacity: ${placeholders?.opacity ?? 1};
-	            }
+	            };
             `;
 		})}
 `;

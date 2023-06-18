@@ -6,7 +6,7 @@ import { theme, GlobalStyle } from "../config";
 import { RvVStack } from ".";
 import { RvButton } from "../Button";
 import { RvVStackFCType } from "../../types/components/Div";
-import { rvVStackDefaultProps } from "./RvVStack";
+import { defaultProps as rvVStackDefaultProps } from "./RvVStack";
 
 export default {
 	title: "Components/Box/RvVStack",
@@ -24,8 +24,10 @@ const Template: Story<RvVStackFCType> = ({ children, ...props }) => {
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvVStackFCType = {
+const defaultProps: RvVStackFCType = {
 	...rvVStackDefaultProps,
+	width: "100%",
+	height: 20,
 };
 
 Default.args = {
@@ -35,5 +37,5 @@ Default.args = {
 			<RvButton>Children</RvButton>
 		</>
 	),
-	...DefaultProps,
+	...defaultProps,
 };

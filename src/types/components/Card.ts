@@ -1,4 +1,5 @@
 import type { ReactNode, HTMLAttributes } from "react";
+import type { BasePropsType } from "./Props";
 import type { StyledFlexType } from "./Div";
 
 export type StyledCardType = StyledFlexType;
@@ -7,14 +8,9 @@ export type StyledCardHeaderType = StyledCardType;
 
 type StylesType = StyledCardType;
 
-type BasePropsType = {
-	[props: string]: string | object | ReactNode | HTMLAttributes<HTMLDivElement> | StylesType;
-	children?: ReactNode;
-};
+export type RvCardFCType = BasePropsType<HTMLAttributes<HTMLDivElement> | StylesType> & StyledCardType;
 
-export type RvCardFCType = BasePropsType & StyledCardType;
-
-export type RvCardHeaderFCType = BasePropsType &
+export type RvCardHeaderFCType = BasePropsType<HTMLAttributes<HTMLDivElement> | StylesType> &
 	StyledCardHeaderType & {
-		headerLabel?: string | ReactNode;
+		label?: string | ReactNode;
 	};

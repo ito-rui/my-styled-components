@@ -5,51 +5,89 @@ import type { FC } from "react";
 import { RvButtonFCType } from "../../types/components/Button";
 import { StyledButton } from "./style";
 
-export const rvButtonDefaultProps: RvButtonFCType = {
-	width: {
-		xs: 5,
-		sm: 5,
-		md: 5,
-		lg: 5,
-		xl: 5,
-	},
-	height: {
-		xs: 2.5,
-		sm: 2.5,
-		md: 2.5,
-		lg: 2.5,
-		xl: 2.5,
-	},
+export const defaultProps: RvButtonFCType = {
+	width: 5,
+	height: 2.5,
 	borderRadius: 0.4,
 	borderWidth: "0px",
-	borderColor: "gray500",
-	bgColor: "gray500",
-	textColor: "black500",
-	hover: {
-		bgColor: "gray300",
-		borderColor: "gray300",
-	},
 };
 
+/**
+ * ------------------------------------------
+ * @name - RvButton
+ *
+ * ------------------------------------------
+ * @StyledComponents - StyledButton
+ *
+ * ------------------------------------------
+ * @defaultProps
+ *
+ * - `width`: 5
+ * - `height`: 2.5
+ * - `borderRadius`: 0.4
+ * - `borderWidth`: 0px
+ * - `iconStyle`: left
+ *
+ * ------------------------------------------
+ * @example
+ *
+ * ```typescript
+ *  import type { FC, ReactNode } from 'react';
+ *  import { RvBox, RvButton } from 'rvi-system';
+ *  import type { RvBoxFCType, StyledButtonType } from 'rvi-system';
+ *
+ *  const buttonProps: StyledButtonType = {
+ *      width: 5,
+ *      height: 2.5,
+ *      bgColor: "red500"
+ *  }
+ *
+ *  const Components: FC<RvBoxFCType> = ({ children, ...props }) => {
+ *      const newProps = {...props};
+ *      return (
+ *          <RvBox {...newProps}>
+ *              <RvButton {...buttonProps}>Button</RvButton>
+ *          </RvBox>
+ *      );
+ *  };
+ *
+ * ```
+ *
+ * ------------------------------------------
+ * @ExpansionExample
+ *
+ * ```typescript
+ *  import type { RvButtonFCType, StyledButtonProps } from 'rvi-system';
+ *  import { RvButton } from 'rvi-system';
+ *
+ *  const Component: FC<RvButtonFCType> = ({children, ...props}) => {
+ *
+ *      // Style you want to set as default
+ *      const defaultProps: StyledButtonType = {
+ *          ... Your DefaultProps !!
+ *      }
+ *
+ *      // Copy props and default values to newProps to preserve primitive values
+ *      const newProps = {...props, ...defaultProps};
+ *
+ *      // Pass newProps to RvButton(StyledButton)
+ *      return <RvButton {...newProps}>{children}</RvButton>;
+ *  };
+ *
+ *  ```
+ */
 const RvButton: FC<RvButtonFCType> = ({ children, ...props }) => {
 	const {
-		width = props.width ?? rvButtonDefaultProps.width,
-		height = props.height ?? rvButtonDefaultProps.height,
-		borderColor = props.borderColor ?? props.bgColor ?? rvButtonDefaultProps.borderColor,
-		borderRadius = props.borderRadius ?? rvButtonDefaultProps.borderRadius,
-		borderWidth = props.borderWidth ?? rvButtonDefaultProps.borderWidth,
-		bgColor = props.bgColor ?? rvButtonDefaultProps.bgColor,
-		textColor = props.textColor ?? rvButtonDefaultProps.textColor,
-		hover = {
-			bgColor: props.hover?.bgColor ?? rvButtonDefaultProps.hover?.bgColor,
-			borderColor: props.hover?.borderColor ?? rvButtonDefaultProps.hover?.borderColor,
-		},
+		width = props.width ?? defaultProps.width,
+		height = props.height ?? defaultProps.height,
+		borderRadius = props.borderRadius ?? defaultProps.borderRadius,
+		borderWidth = props.borderWidth ?? defaultProps.borderWidth,
 		iconStyle = props.iconStyle ?? "left",
 	} = useMemo(() => props, [props]);
 
 	const newProps = useMemo(
-		() => ({ ...props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover }),
-		[props, width, bgColor, height, borderColor, borderRadius, borderWidth, textColor, hover]
+		() => ({ ...props, width, height, borderRadius, borderWidth }),
+		[props, width, height, borderRadius, borderWidth]
 	);
 
 	return useMemo(

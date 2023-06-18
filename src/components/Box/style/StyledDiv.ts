@@ -31,21 +31,21 @@ import {
 } from "../../../utils/getStyle";
 
 const StyledDiv = styled.div<StyledDivType>`
-	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
+	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.auto};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
 	display: ${({ display }) => getDisplay({ display }) ?? "block"};
 	position: ${({ position }) => getPosition({ position }) ?? " none"};
 	box-shadow: ${({ theme, boxShadow }) => getBoxShadow({ boxShadow }) ?? theme.shadow.none};
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
-	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white500};
-	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.white500};
-	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.black500};
-	border-width: ${({ theme, borderWidth }) => getBorderWidth({ borderWidth }) ?? theme.sizes.radius.sx};
+	border-color: ${({ borderColor }) => getBorderColor({ borderColor }) ?? "none"};
+	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.black500};
+	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.white500};
+	border-width: ${({ borderWidth }) => getBorderWidth({ borderWidth }) ?? ""};
 	padding: ${({ padding }) => getPadding({ padding }) ?? ""};
-	padding-top: ${({ theme, paddingTop }) => getPaddingTop({ paddingTop }) ?? theme.sizes.spaces[0]};
-	padding-right: ${({ theme, paddingRight }) => getPaddingRight({ paddingRight }) ?? theme.sizes.spaces[0]};
-	padding-bottom: ${({ theme, paddingBottom }) => getPaddingBottom({ paddingBottom }) ?? theme.sizes.spaces[0]};
-	padding-left: ${({ theme, paddingLeft }) => getPaddingLeft({ paddingLeft }) ?? theme.sizes.spaces[0]};
+	padding-top: ${({ paddingTop }) => getPaddingTop({ paddingTop }) ?? ""};
+	padding-right: ${({ paddingRight }) => getPaddingRight({ paddingRight }) ?? ""};
+	padding-bottom: ${({ paddingBottom }) => getPaddingBottom({ paddingBottom }) ?? ""};
+	padding-left: ${({ paddingLeft }) => getPaddingLeft({ paddingLeft }) ?? ""};
 	margin: ${({ margin }) => getMargin({ margin }) ?? ""};
 	margin-top: ${({ marginTop }) => getMarginTop({ marginTop }) ?? ""};
 	margin-right: ${({ marginRight }) => getMarginRight({ marginRight }) ?? ""};
@@ -56,8 +56,8 @@ const StyledDiv = styled.div<StyledDivType>`
 	font-weight: ${({ theme, fontWeight }) => getFontWeight({ fontWeight }) ?? theme.fonts.fontWeights.normal};
 	line-height: ${({ theme, lineHeight }) => getLineHeight({ lineHeight }) ?? theme.sizes.lineHeights.normal};
 	&:hover {
-		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.black500};
-		background-color: ${({ theme, hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? theme.colors.systemColors.white500};
+		color: ${({ hover }) => getColor({ textColor: hover?.textColor }) ?? ""};
+		background-color: ${({ hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? ""};
 	}
 
 	${({ theme, ...props }) =>
@@ -95,11 +95,11 @@ const StyledDiv = styled.div<StyledDivType>`
                 display: ${getDisplay({ display, breakpoint }) ?? "block"};
 		        position: ${getPosition({ position, breakpoint }) ?? "none"};
                 border-radius: ${getBorderRadius({ borderRadius, breakpoint }) ?? theme.sizes.radius.sx};
-                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};
-                border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? theme.sizes.radius.sx};
+                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white200};
+                border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? ""};
                 box-shadow: ${getBoxShadow({ boxShadow, breakpoint }) ?? theme.shadow.none};
-                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.white500};
-                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 padding: ${getPadding({ padding, breakpoint }) ?? ""};
                 padding-top: ${getPaddingTop({ paddingTop, breakpoint }) ?? ""};
                 padding-right: ${getPaddingRight({ paddingRight, breakpoint }) ?? ""};
@@ -115,8 +115,8 @@ const StyledDiv = styled.div<StyledDivType>`
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
                 line-height: ${getLineHeight({ lineHeight, breakpoint }) ?? theme.sizes.lineHeights.normal};
                 &:hover {
-                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.black500};
-                    background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? "none"};
+                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? ""};
+                    background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? ""};
                 };
             `;
 		})}

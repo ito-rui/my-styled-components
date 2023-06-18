@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvCard } from ".";
 import { RvCardFCType } from "../../types/components/Card";
-import { rvCardDefaultProps } from "./RvCard";
+import { defaultProps as rvCardDefaultProps } from "./RvCard";
 
 export default {
 	title: "Components/Card/RvCard",
@@ -23,8 +23,9 @@ const Template: Story<RvCardFCType> = ({ children, ...props }) => {
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvCardFCType = {
+const defaultProps: RvCardFCType = {
 	...rvCardDefaultProps,
+	alignItems: "center",
 };
 
-Default.args = { children: "Default", ...DefaultProps };
+Default.args = { children: "Default", ...defaultProps };

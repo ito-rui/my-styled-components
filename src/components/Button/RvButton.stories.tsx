@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvButton } from "./index";
 import type { RvButtonFCType } from "../../types/components/Button";
-import { rvButtonDefaultProps } from "./RvButton";
+import { defaultProps as rvButtonDefaultProps } from "./RvButton";
 
 export default {
 	title: "Components/Button/RvButton",
@@ -47,7 +47,7 @@ Default.play = async ({ canvasElement }) => {
  */
 export const OutLine = Template.bind({});
 const outLineProps: RvButtonFCType = {
-	...rvButtonDefaultProps,
+	...defaultProps,
 	bgColor: "white500",
 	borderWidth: "1px",
 	borderColor: "black500",

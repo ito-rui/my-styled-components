@@ -35,8 +35,8 @@ const StyledMain = styled.main<StyledMainType>`
 	box-shadow: ${({ theme, boxShadow }) => getBoxShadow({ boxShadow }) ?? theme.shadow.none};
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
 	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white500};
-	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.white500};
-	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.black500};
+	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.black500};
+	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.white500};
 	border-width: ${({ theme, borderWidth }) => getBorderWidth({ borderWidth }) ?? theme.sizes.radius.sx};
 	padding: ${({ padding }) => getPadding({ padding }) ?? ""};
 	padding-top: ${({ paddingTop }) => getPaddingTop({ paddingTop }) ?? ""};
@@ -53,8 +53,8 @@ const StyledMain = styled.main<StyledMainType>`
 	font-weight: ${({ theme, fontWeight }) => getFontWeight({ fontWeight }) ?? theme.fonts.fontWeights.normal};
 	line-height: ${({ theme, lineHeight }) => getLineHeight({ lineHeight }) ?? theme.sizes.lineHeights.normal};
 	&:hover {
-		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.black500};
-		background-color: ${({ theme, hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? theme.colors.systemColors.white500};
+		color: ${({ hover }) => getColor({ textColor: hover?.textColor }) ?? "none"};
+		background-color: ${({ hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? "none"};
 	}
 
 	${({ theme, ...props }) =>
@@ -93,8 +93,8 @@ const StyledMain = styled.main<StyledMainType>`
                 border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? theme.sizes.radius.sx};
                 box-shadow: ${getBoxShadow({ boxShadow, breakpoint }) ?? theme.shadow.none};
-                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.white500};
-                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 padding: ${getPadding({ padding, breakpoint }) ?? ""};
                 padding-right: ${getPaddingRight({ paddingRight, breakpoint }) ?? ""};
                 padding-top: ${getPaddingTop({ paddingTop, breakpoint }) ?? ""};
@@ -110,7 +110,7 @@ const StyledMain = styled.main<StyledMainType>`
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
                 line-height: ${getLineHeight({ lineHeight, breakpoint }) ?? theme.sizes.lineHeights.normal};
                 &:hover {
-                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? "none"};
                     background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? "none"};
                 };
             `;

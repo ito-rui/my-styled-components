@@ -13,19 +13,56 @@ export const rvSpanDefaultProps: StyledSpanType = {
 		lg: 1.4,
 		xl: 1.5,
 	},
-	textColor: "black400",
 };
 
-const RvSpan: FC<RvSpanFCType> = ({ children, ...props }) => {
-	const {
-		fontSize = props.fontSize ?? rvSpanDefaultProps.fontSize,
-		textColor = props.textColor ?? rvSpanDefaultProps.textColor,
-		hover = {
-			textColor: props.hover?.textColor ?? props.textColor ?? rvSpanDefaultProps.textColor,
-		},
-	} = useMemo(() => ({ ...props }), [props]);
+/**
+ * ------------------------------------------
+ * @name - RvSpan
+ *
+ * ------------------------------------------
+ * @StyledComponents - RvSpan
+ *
+ * ------------------------------------------
+ * @Components - StyledSpan
+ *
+ * ------------------------------------------
+ * @defaultprops
+ *
+ * - `fontSize`: {
+ *      xs: 1.1,
+ *      sm: 1.2,
+ *      md: 1.3,
+ *      lg: 1.4,
+ *      xl: 1.5
+ *   }
+ *
+ * ------------------------------------------
+ * @expansionexample
+ *
+ * ```typescript
+ *  import type { FC } from 'react';
+ *  import type { RvSpan } from 'rvi-system';
+ *  import type { RvSpanFCType, StyledSpanType } from 'rvi-system';
+ *
+ *  const component: FC<RvSpanFCType> = ({children, ...props}) => {
+ *
+ *      // style you want to set as default
+ *      const defaultprops: StyledSpanType = {
+ *          ... your defaultprops !!
+ *      }
+ *
+ *      // Copy props and default values to newProps to preserve primitive values
+ *      const newProps = {...props, ...defaultProps};
+ *
+ *      // Pass newProps to RvSpan(StyledSpan)
+ *      return <RvSpan {...newProps}>{children}</RvSpan>;
+ *  }
+ * ```
+ */
 
-	const newProps = useMemo(() => ({ ...props, fontSize, textColor, hover }), [props, fontSize, textColor, hover]);
+const RvSpan: FC<RvSpanFCType> = ({ children, ...props }) => {
+	const { fontSize = props.fontSize ?? rvSpanDefaultProps.fontSize } = useMemo(() => ({ ...props }), [props]);
+	const newProps = useMemo(() => ({ ...props, fontSize }), [props, fontSize]);
 	return useMemo(() => <StyledSpan {...newProps}>{children}</StyledSpan>, [newProps, children]);
 };
 

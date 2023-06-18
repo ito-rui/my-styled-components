@@ -31,16 +31,16 @@ import {
 } from "../../../utils/getStyle";
 
 const StyledButton = styled.button<StyledButtonType>`
-	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.full};
+	width: ${({ theme, width }) => getWidth({ width }) ?? theme.sizes.widths.auto};
 	height: ${({ theme, height }) => getHeight({ height }) ?? theme.sizes.heights.auto};
 	display: ${({ display }) => getDisplay({ display }) ?? "block"};
 	position: ${({ position }) => getPosition({ position }) ?? " none"};
 	box-shadow: ${({ theme, boxShadow }) => getBoxShadow({ boxShadow }) ?? theme.shadow.none};
 	border-radius: ${({ theme, borderRadius }) => getBorderRadius({ borderRadius }) ?? theme.sizes.radius.sx};
-	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white500};
-	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.white500};
-	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.black500};
-	border-width: ${({ theme, borderWidth }) => getBorderWidth({ borderWidth }) ?? theme.sizes.radius.sx};
+	border-color: ${({ theme, borderColor }) => getBorderColor({ borderColor }) ?? theme.colors.systemColors.white200};
+	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.black500};
+	color: ${({ theme, textColor }) => getColor({ textColor }) ?? theme.colors.systemColors.white500};
+	border-width: ${({ theme, borderWidth }) => getBorderWidth({ borderWidth }) ?? theme.sizes.radius.none};
 	padding: ${({ padding }) => getPadding({ padding }) ?? ""};
 	padding-top: ${({ paddingTop }) => getPaddingTop({ paddingTop }) ?? ""};
 	padding-right: ${({ paddingRight }) => getPaddingRight({ paddingRight }) ?? ""};
@@ -56,14 +56,15 @@ const StyledButton = styled.button<StyledButtonType>`
 	font-weight: ${({ theme, fontWeight }) => getFontWeight({ fontWeight }) ?? theme.fonts.fontWeights.normal};
 	line-height: ${({ theme, lineHeight }) => getLineHeight({ lineHeight }) ?? theme.sizes.lineHeights.normal};
 	&:hover {
-		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.black500};
-		background-color: ${({ theme, hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? theme.colors.systemColors.white500};
+		color: ${({ theme, hover }) => getColor({ textColor: hover?.textColor }) ?? theme.colors.systemColors.white400};
+		background-color: ${({ theme, hover }) => getBgColor({ bgColor: hover?.bgColor }) ?? theme.colors.systemColors.black400};
+		cursor: ${({ hover }) => hover?.cursor ?? "pointer"};
 	}
 
 	&:disabled {
-		color: ${({ theme, disableds }) => getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.black500};
+		color: ${({ theme, disableds }) => getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.white500};
 		background-color: ${({ theme, disableds }) =>
-			getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.white500};
+			getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.black100};
 		cursor: ${({ disableds }) => disableds?.cursor ?? "not-allowed"};
 	}
 
@@ -103,11 +104,11 @@ const StyledButton = styled.button<StyledButtonType>`
                 display: ${getDisplay({ display }) ?? "block"};
 		        position: ${getPosition({ position, breakpoint }) ?? "none"};
                 border-radius: ${getBorderRadius({ borderRadius, breakpoint }) ?? theme.sizes.radius.sx};
-                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white500};
+                border-color: ${getBorderColor({ borderColor, breakpoint }) ?? theme.colors.systemColors.white200};
                 border-width: ${getBorderWidth({ borderWidth, breakpoint }) ?? theme.sizes.radius.sx};
                 box-shadow: ${getBoxShadow({ boxShadow, breakpoint }) ?? theme.shadow.none};
-                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.white500};
-                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                background-color: ${getBgColor({ bgColor, breakpoint }) ?? theme.colors.systemColors.black500};
+                color: ${getColor({ textColor, breakpoint }) ?? theme.colors.systemColors.white500};
                 padding: ${getPadding({ padding, breakpoint }) ?? ""};
                 padding-right: ${getPaddingRight({ paddingRight, breakpoint }) ?? ""};
                 padding-top: ${getPaddingTop({ paddingTop, breakpoint }) ?? ""};
@@ -122,13 +123,18 @@ const StyledButton = styled.button<StyledButtonType>`
                 font-size: ${getFontSize({ fontSize, breakpoint }) ?? theme.fonts.fontSizes.base};
                 font-weight: ${getFontWeight({ fontWeight, breakpoint }) ?? theme.fonts.fontWeights.normal};
                 line-height: ${getLineHeight({ lineHeight, breakpoint }) ?? theme.sizes.lineHeights.normal};
+
                 &:hover {
-                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.black500};
-                    background-color: ${getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? "none"};
+                    color: ${getColor({ textColor: hover?.textColor, breakpoint }) ?? theme.colors.systemColors.white400};
+                    background-color: ${
+						getBgColor({ bgColor: hover?.bgColor, breakpoint }) ?? theme.colors.systemColors.black400
+					};
+                    cursor: ${hover?.cursor ?? "pointer"};
                 };
+
                 &:disabled {
-		            color: ${getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.black500};
-		            background-color: ${getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.white500};
+		            color: ${getColor({ textColor: disableds?.textColor }) ?? theme.colors.systemColors.white500};
+		            background-color: ${getBgColor({ bgColor: disableds?.bgColor }) ?? theme.colors.systemColors.black100};
 		            cursor: ${disableds?.cursor ?? "not-allowed"};
 	            }
             `;

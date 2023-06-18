@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvIconButton } from "./index";
 import type { RvIconButtonFCType } from "../../types/components/Button";
-import { rvIconButtonDefaultProps } from "./RvIconButton";
+import { defaultProps as rvIconDefaultProps } from "./RvIconButton";
 import { MdBarChart } from "react-icons/md";
 
 export default {
@@ -26,12 +26,12 @@ const Template: Story<RvIconButtonFCType> = ({ children, ...args }) => (
 );
 
 /**
- * Base Button
+ * Base Icon Button
  */
 export const Default = Template.bind({});
 
 const defaultProps: RvIconButtonFCType = {
-	...rvIconButtonDefaultProps,
+	...rvIconDefaultProps,
 };
 Default.args = {
 	children: <MdBarChart size={24} />,

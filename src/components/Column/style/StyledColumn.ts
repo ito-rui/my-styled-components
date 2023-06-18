@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { getHeight, getWidth, getMarginRight, getMarginBottom } from "../../../utils/getStyle";
+import { getHeight, getWidth, getMarginRight, getMarginBottom, getBgColor } from "../../../utils/getStyle";
 import { StyledFlex } from "../../Box";
 import type { StyledColumnType } from "../../../types";
 
 const StyledColumn = styled(StyledFlex)<StyledColumnType>`
 	width: ${({ width }) => getWidth({ width }) ?? ""};
 	height: ${({ height }) => getHeight({ height }) ?? ""};
+	background-color: ${({ theme, bgColor }) => getBgColor({ bgColor }) ?? theme.colors.systemColors.black600};
 	flex-direction: row;
 
 	${({ theme, space }) => theme.breakpoint.xs`

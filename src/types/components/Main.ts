@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
 import type { BasePropsType } from "./Props";
-import type { StyledDivType } from "./Div";
+import type { StyledFlexType } from "./Div";
 
-export type StyledMainType = StyledDivType;
+export type StyledMainType = StyledFlexType;
 
-export type RvMainFCType = StyledDivType & BasePropsType<HTMLAttributes<HTMLDivElement>>;
+export type RvMainFCType = StyledFlexType & BasePropsType<HTMLAttributes<HTMLDivElement>>;

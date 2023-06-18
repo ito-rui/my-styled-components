@@ -1,12 +1,11 @@
 /* eslint react/prop-types: off */
 
 import type { Meta, Story } from "@storybook/react";
-import { within, userEvent } from "@storybook/testing-library";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvInput } from ".";
 import type { RvInputFCType } from "../../types/components/Input";
-import { defaultProps } from "./RvInput";
+import { defaultProps as rvDefaultProps } from "./RvInput";
 
 export default {
 	title: "Components/Input/RvInput",
@@ -29,10 +28,11 @@ const Template: Story<RvInputFCType> = ({ children, ...args }) => (
  */
 export const Default = Template.bind({});
 
-const DefaultProps: RvInputFCType = {
-	...defaultProps,
+const defaultProps: RvInputFCType = {
+	...rvDefaultProps,
+	placeholder: "placeholder",
 };
 Default.args = {
 	children: "Default",
-	...DefaultProps,
+	...defaultProps,
 };

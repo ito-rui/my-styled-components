@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle } from "../config";
 import { RvRow } from ".";
 import { RvRowFCType } from "../../types/components/Row";
-import { defaultProps } from "./RvRow";
+import { defaultProps as rvRowDefaultProps } from "./RvRow";
 import { RvColumn } from "../Column";
 import { RvStat } from "../Stat";
 
@@ -15,33 +15,34 @@ export default {
 	tags: ["autodocs"],
 } as Meta<RvRowFCType>;
 
-const Template: Story<RvRowFCType> = ({ children, ...props }) => {
+const Template: Story<RvRowFCType> = ({ children }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<RvRow {...props}>{children}</RvRow>
+			{children}
 		</ThemeProvider>
 	);
 };
 
 export const Default = Template.bind({});
-const DefaultProps: RvRowFCType = {
-	...defaultProps,
-	bgColor: "red500",
+const defaultProps: RvRowFCType = {
+	...rvRowDefaultProps,
+	justifyContent: "start",
+	alignItems: "start",
 };
 
 Default.args = {
 	children: (
-		<>
+		<RvRow {...defaultProps}>
 			<RvColumn>
 				<RvStat>Column Item1</RvStat>
-				<RvStat>Column Item1</RvStat>
-				<RvStat>Column Item3</RvStat>
-				<RvStat>Column Item1</RvStat>
-				<RvStat>Column Item1</RvStat>
-				<RvStat>Column Item3</RvStat>
+				<RvStat>Column Item2</RvStat>
 			</RvColumn>
-		</>
+			<RvColumn>
+				<RvStat>Column Item3</RvStat>
+				<RvStat>Column Item4</RvStat>
+			</RvColumn>
+		</RvRow>
 	),
-	...DefaultProps,
+	...defaultProps,
 };
